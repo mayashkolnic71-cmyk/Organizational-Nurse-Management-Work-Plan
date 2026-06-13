@@ -1,32 +1,29 @@
 @echo off
-:: Set code page to UTF-8 to support Hebrew text in command line
-chcp 65001 > nul
-title העלאת קבצים ל-GitHub ועדכון האתר
+title Uploading files to GitHub...
 
 echo ===================================================
-echo   העלאת שינויים ועדכון אוטומטי של האתר ב-Vercel
+echo   Uploading changes to GitHub and updating Vercel  
 echo ===================================================
 echo.
 
 cd /d "d:\antigravity"
 
-echo [1/3] בודק שינויים מקומיים...
+echo [1/3] Checking local changes...
 git status --short
 echo.
 
-echo [2/3] שומר את כל השינויים (Commit)...
+echo [2/3] Committing changes...
 git add -A
-:: Get date and time for commit message
 set timestamp=%date% %time%
 git commit -m "Manual upload: %timestamp%"
 echo.
 
-echo [3/3] דוחף את השינויים ל-GitHub...
+echo [3/3] Pushing to GitHub...
 git push origin main
 echo.
 
 echo ===================================================
-echo   הקבצים הועלו בהצלחה! האתר יתעדכן בדקה הקרובה.
+echo   Upload completed successfully! Site will update soon.
 echo ===================================================
 echo.
 pause
