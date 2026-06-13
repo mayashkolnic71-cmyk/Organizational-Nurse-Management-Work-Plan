@@ -657,13 +657,15 @@ function renderCoursesList() {
         return;
     }
     
-    // טעינת נתוני דירוגים מובנים
     let allTestimonials = [];
     try {
         const stored = localStorage.getItem('iang_testimonials');
-        if (stored) allTestimonials = JSON.parse(stored);
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) allTestimonials = parsed;
+        }
     } catch (e) {}
-    const combinedTestimonials = [...allTestimonials, ...globalFeedbacks, ...initialFeedbacks];
+    const combinedTestimonials = [...allTestimonials, ...initialFeedbacks, ...globalFeedbacks];
     const ratings = calculateRatings(combinedTestimonials);
     
     filtered.forEach(course => {
@@ -1043,10 +1045,13 @@ function processAndRenderFeedbackData() {
     let customFeedbacks = [];
     try {
         const stored = localStorage.getItem('iang_testimonials');
-        if (stored) customFeedbacks = JSON.parse(stored);
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) customFeedbacks = parsed;
+        }
     } catch (e) {}
 
-    const allFeedbacks = [...customFeedbacks, ...globalFeedbacks, ...initialFeedbacks];
+    const allFeedbacks = [...customFeedbacks, ...initialFeedbacks, ...globalFeedbacks];
 
     // חישוב ועדכון דירוגים
     const ratings = calculateRatings(allFeedbacks);
@@ -1489,9 +1494,12 @@ function updateDashboardDataWithLiveRatings() {
     let customFeedbacks = [];
     try {
         const stored = localStorage.getItem('iang_testimonials');
-        if (stored) customFeedbacks = JSON.parse(stored);
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) customFeedbacks = parsed;
+        }
     } catch (e) {}
-    const allFeedbacks = [...customFeedbacks, ...globalFeedbacks, ...initialFeedbacks];
+    const allFeedbacks = [...customFeedbacks, ...initialFeedbacks, ...globalFeedbacks];
     const ratings = calculateRatings(allFeedbacks);
 
     // 1. עדכון מונים בדשבורד
