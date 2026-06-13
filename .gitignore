@@ -1,0 +1,19 @@
+# Ignore backup files and copies
+*.bak
+* - Copy.*
+* - Copy
+app.js - Copy.bak
+app - Copy.js
+app.js.bak
+feedback.html.bak
+style.css.bak
+
+# Ignore watcher logs and process files
+autopush.log
+autopush.pid
+
+# Ignore system generated files
+.system_generated/
+old code/
+project/
+"\327\244\327\250\327\225\327\231\327\247\327\230 \327\221\327\247\327\250\327\225\327\252/"
