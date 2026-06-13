@@ -268,6 +268,14 @@ let globalFeedbacks = [];
 let feedbacksVisibleCount = 15;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ניקוי חד-פעמי של משובי הבדיקה שהוכנסו במהלך הבדיקות
+    try {
+        if (!localStorage.getItem('iang_cleared_test_reviews_v3')) {
+            localStorage.removeItem('iang_testimonials');
+            localStorage.setItem('iang_cleared_test_reviews_v3', 'true');
+        }
+    } catch(e) {}
+
     initMobileMenu();
     initContactModal();
     populateCourseDropdowns();
