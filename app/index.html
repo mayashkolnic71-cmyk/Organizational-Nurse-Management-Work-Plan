@@ -181,6 +181,17 @@
 
                 <!-- 2. Org Structure Tab -->
                 <section id="org-structure" class="tab-content">
+                    <div class="card glass" style="margin-bottom: 20px; overflow-x: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="margin: 0;">תרשים מבנה ארגוני</h3>
+                            <button class="btn btn-sm btn-primary" onclick="resetOrgChart()" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #ef4444;"><i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i> איפוס מבנה</button>
+                        </div>
+                        <p style="margin-bottom:20px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התפקיד או השם בתוך הקובייה לעריכה. השתמש בכפתור ה- <strong>+</strong> להוספת מחלקות / עובדים כפופים.</p>
+                        <div class="org-tree" id="org-chart-root">
+                            <!-- Rendered via JS -->
+                        </div>
+                    </div>
+
                         <div class="card glass trustees-section" style="margin-top: 25px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
                                 <h3>מערך נאמני נושא קליניים ומינויים</h3>
@@ -563,16 +574,6 @@
                         <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב צוות האחיות, ריכוז אחריות משמרת ואחיות בכירות.</p>
                     </div>
 
-                    <div class="card glass" style="margin-bottom: 20px; overflow-x: auto;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <h3 style="margin: 0;">תרשים מבנה ארגוני</h3>
-                            <button class="btn btn-sm btn-primary" onclick="resetOrgChart()" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #ef4444;"><i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i> איפוס מבנה</button>
-                        </div>
-                        <p style="margin-bottom:20px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התפקיד או השם בתוך הקובייה לעריכה. השתמש בכפתור ה- <strong>+</strong> להוספת מחלקות / עובדים כפופים.</p>
-                        <div class="org-tree" id="org-chart-root">
-                            <!-- Rendered via JS -->
-                        </div>
-                    </div>
 
                     <div class="card glass" style="margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
