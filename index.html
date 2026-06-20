@@ -1170,5 +1170,221 @@
         }
     }
 </script>
-</body>
+<!-- Shift Manager Modal -->
+<div id="shift-manager-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('shift-manager-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> ×”×“×¤×¡ ×˜×•×¤×¡
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl;">
+            <!-- Header -->
+            <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
+                <div style="text-align: right;">
+                    <img src="https://via.placeholder.com/150x60?text=Logo" alt="Logo" style="height: 60px;">
+                    <div style="font-size: 0.8rem;">×ž×¨×›×– ×¨×¤×•××™ ×©×™×§×•× ×•×¡×™×¢×•×“<br>×‘×™×ª ×”×“×¨<br>×¢.×¨. 580540670</div>
+                </div>
+                <div style="text-align: center; flex: 1;">
+                    <h2 style="margin: 0; font-size: 1.5rem;">× ×¡×¤×— 6 â€“ ×›×ª×‘ ×ž×™× ×•×™</h2>
+                    <h3 style="margin: 5px 0;">×›×ª×‘ ×ž×™× ×•×™ ×œ×ª×¤×§×™×“ ××—/×•×ª ××—×¨××™/×ª ×ž×©×ž×¨×ª / ×—×™×“×•×© ×ž×™× ×•×™</h3>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div style="margin-bottom: 20px;">
+                <div style="margin-bottom: 5px;">×©× ×”××—×•×ª: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 300px; font-family: inherit; font-size: 1rem;"></div>
+                <div style="margin-bottom: 5px;">×ž×¡' ×ª.×–: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 300px; font-family: inherit; font-size: 1rem;"></div>
+                <div style="margin-bottom: 5px;">×ž×¡' ×¨×™×©×™×•×Ÿ: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 300px; font-family: inherit; font-size: 1rem;"></div>
+            </div>
+            
+            <div style="font-weight: bold; margin-bottom: 10px; text-align: center;">×”×¢×¨×›×ª ×¡×™×›×•× - ×ž×™×•×ž× ×•×™×•×ª × ×™×”×•×œ:</div>
+
+            <!-- Evaluation Table -->
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #000;">
+                <thead>
+                    <tr style="background-color: #e2e8f0;">
+                        <th style="border: 1px solid #000; padding: 10px; width: 40%;">×ž×“×“×™× ×œ×”×¢×¨×›×”</th>
+                        <th style="border: 1px solid #000; padding: 10px; text-align: center; width: 15%;">×ž××¤×™×™×Ÿ ×‘×™×•×ª×¨<br>(3)</th>
+                        <th style="border: 1px solid #000; padding: 10px; text-align: center; width: 15%;">×ž××¤×™×™×Ÿ<br>(2)</th>
+                        <th style="border: 1px solid #000; padding: 10px; text-align: center; width: 15%;">×ž×ª×§×©×” ×‘×‘×™×¦×•×¢<br>(1)</th>
+                        <th style="border: 1px solid #000; padding: 10px; text-align: center; width: 15%;">×›×œ×œ ××™× ×• ×ž××¤×™×™×Ÿ<br>(0)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f8fafc;">1. ×ª×›× ×•×Ÿ ×•××¨×’×•×Ÿ ×¢×‘×•×“×” ×‘×ž×©×ž×¨×ª</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f1f5f9;">2. ×§×‘×™×¢×ª ×¡×“×¨×™ ×¢×“×™×¤×•×™×•×ª ×•×¤×ª×¨×•×Ÿ ×‘×¢×™×•×ª ×‘×”×ª××ž×” ×œ×ž×¦×‘×™× ×ž×©×ª× ×™× ×‘×ž×©×ž×¨×ª.</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f8fafc;">3. ×¨×™×›×•×– ×ž×™×“×¢ ×¢×œ ×›×œ×œ ×”×ž×˜×•×¤×œ×™× ×œ×¨×‘×•×ª ×©×™× ×•×™×™× ×‘×ž×¦×‘×™× ×•×”×‘×˜×—×ª ×”×˜×™×¤×•×œ ×‘×”× ×›×•×œ×œ ×“×™×•×•×— ×•×ª×™×¢×•×“.</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f1f5f9;">4. ×™×™×¢×•×¥ ×•×”×“×¨×›×” ×•×‘×§×¨×” ×¢×œ ×”×¢×©×™×™×” ×•×¢×‘×•×“×ª ×”×¦×•×•×ª</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f8fafc;">5. ×ž×ª×Ÿ ×ž×™×“×¢ ×œ×ž×©×¤×—×•×ª ×‘×ž×¡×’×¨×ª ×¡×ž×›×•×ª×” ×•×‘×”×ª×× ×œ×¦×•×¨×š ×”×¤× ×™×™×ª ×”×ž×©×¤×—×•×ª ×œ×ž×˜×¤×œ×™× ×¨×œ×‘× ×˜×™×™× ×œ×©× ×§×‘×œ×ª ×ž×™×“×¢.</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; background-color: #f1f5f9;">6. × ×™×”×•×œ ×ž×©×ž×¨×ª ×‘××™×¨×•×¢×™ ×—×¨×•× ×ž×©×ª× ×™×.</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; text-align:center;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Bottom Table -->
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #000;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #000; padding: 5px; width: 15%;" rowspan="2">×¤×¢×•×œ×•×ª</th>
+                        <th style="border: 1px solid #000; padding: 5px;" colspan="2">×§×¨×™××ª × ×•×”×œ ×¨×œ×•×•× ×˜×™<br><span style="font-size:0.8em;font-weight:normal;">(×—×ª×™×ž×” ×•×§×‘×œ×ª ×”××—×•×ª)</span></th>
+                        <th style="border: 1px solid #000; padding: 5px;" colspan="2">×‘×™×¦×•×¢ ×‘×¤×™×§×•×—<br><span style="font-size:0.8em;font-weight:normal;">×©× ×”×ž×“×¨×™×›×”</span></th>
+                        <th style="border: 1px solid #000; padding: 5px;" colspan="2">××™×©×•×¨ ×œ×‘×™×¦×•×¢ ×¢×¦×ž××™</th>
+                        <th style="border: 1px solid #000; padding: 5px; width: 25%;" rowspan="2">×”×¢×¨×•×ª</th>
+                    </tr>
+                    <tr>
+                        <th style="border: 1px solid #000; padding: 5px;">×ª××¨×™×š</th>
+                        <th style="border: 1px solid #000; padding: 5px;">×—×ª×™×ž×”</th>
+                        <th style="border: 1px solid #000; padding: 5px;">×ª××¨×™×š</th>
+                        <th style="border: 1px solid #000; padding: 5px;">×—×ª×™×ž×”</th>
+                        <th style="border: 1px solid #000; padding: 5px;">×ª××¨×™×š</th>
+                        <th style="border: 1px solid #000; padding: 5px;">×—×ª×™×ž×”</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; font-weight:bold;">××—×¨×™×•×ª ×ž×©×ž×¨×ª:<br>×ž×©×ž×¨×ª ×‘×•×§×¨<br>/×¢×¨×‘/×œ×™×œ×”</td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                        <td style="border: 1px solid #000;"><input type="text" style="width:100%; height:100%; border:none; background:transparent;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Signatures -->
+            <div style="line-height: 1.8;">
+                <div style="margin-bottom: 10px;"><u>×”×ž×œ×¦×ª ××—/×•×ª ××—×¨××™/×ª:</u></div>
+                <div>×ª×•×§×£ ×”×ž×™× ×•×™ ×ž×ª××¨×™×š <input type="text" style="border:none; border-bottom:1px dashed #000; width:100px;"> ×¢×“ <input type="text" style="border:none; border-bottom:1px dashed #000; width:100px;"></div>
+                <div>×œ×ž×©×ž×¨×ª : <label><input type="checkbox"> ×¢×¨×‘</label> &nbsp;&nbsp; <label><input type="checkbox"> ×œ×™×œ×”</label> &nbsp;&nbsp; <label><input type="checkbox"> ×‘×•×§×¨</label></div>
+                <div>×©× ××—×•×ª ××—×¨××™/×ª <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px;"> ×—×ª×™×ž×” <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px;"> ×ª××¨×™×š <input type="text" style="border:none; border-bottom:1px dashed #000; width:100px;"></div>
+                <div>×”×ž×œ×¦×ª ×ž× ×”×œ×ª ×”×¡×™×¢×•×“: <input type="text" style="border:none; border-bottom:1px dashed #000; width:300px;"></div>
+                <div>×—×ª×™×ž×ª ×ž× ×”×œ×ª ×”×¡×™×¢×•×“ <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px;"> ×ª××¨×™×š <input type="text" style="border:none; border-bottom:1px dashed #000; width:100px;"></div>
+                
+                <div style="margin-top: 20px; font-weight:bold;">
+                    ×ª××¨×™×š ×•×—×ª×™×ž×ª ×”××—/×•×ª ×”×ž×•×¢×¨×›×ª: <input type="text" style="border:none; border-bottom:1px dashed #000; width:200px;">
+                </div>
+                
+                <div style="margin-top: 20px; font-size: 0.9em;">
+                    * ××—/×•×ª ××©×¨ ×œ× ×¢×‘×“/×” ×‘×ž×—×œ×§×” ×©×™×©×” ×—×•×“×©×™× ×•×™×•×ª×¨ ×ž×—×•×™×‘/×ª ×œ×—×–×•×¨ ×¢×œ ×ª×•×›× ×™×ª ×”×”×“×¨×›×” ×œ××—×¨×™×•×ª ×ž×©×ž×¨×ª.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Staff Meeting Modal -->
+<div id="staff-meeting-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 800px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('staff-meeting-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> ×”×“×¤×¡ ×˜×•×¤×¡
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl;">
+            <div style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">
+                <h2 style="margin: 0; color: #1e3a8a;">×¤×•×¨×ž×˜ ×™×©×™×‘×ª ×¦×•×•×ª ×ž×—×œ×§×ª×™×ª</h2>
+                <h4 style="margin: 5px 0; color: #475569;">×ª×™×¢×•×“ ×”×—×œ×˜×•×ª, × ×•×©××™× ×œ×“×™×•×Ÿ ×•×ž×¢×§×‘ ×ž×©×™×ž×•×ª</h4>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
+                <div>×ž×—×œ×§×”: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 200px; font-family: inherit; font-size: 1rem;"></div>
+                <div>×ª××¨×™×š: <input type="date" style="border: none; border-bottom: 1px dashed #000; font-family: inherit; font-size: 1rem;"></div>
+                <div>×©×¢×”: <input type="time" style="border: none; border-bottom: 1px dashed #000; font-family: inherit; font-size: 1rem;"></div>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <div style="font-weight: bold; margin-bottom: 5px;">× ×•×©× ×”×™×©×™×‘×”:</div>
+                <input type="text" style="width: 100%; border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; font-family: inherit;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <div style="font-weight: bold; margin-bottom: 5px;">×ž×©×ª×ª×¤×™× (×©× ×•×ª×¤×§×™×“):</div>
+                <textarea rows="3" style="width: 100%; border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <div style="font-weight: bold; margin-bottom: 5px;">×¢×™×§×¨×™ ×”×“×‘×¨×™× / × ×§×•×“×•×ª ×©× ×™×“×•× ×•:</div>
+                <textarea rows="6" style="width: 100%; border: 1px solid #cbd5e1; padding: 8px; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <div style="font-weight: bold; margin-bottom: 10px;">×”×—×œ×˜×•×ª ×•×ž×©×™×ž×•×ª ×œ×‘×™×¦×•×¢:</div>
+                <table style="width: 100%; border-collapse: collapse; text-align: right; border: 1px solid #cbd5e1;">
+                    <thead style="background-color: #f1f5f9;">
+                        <tr>
+                            <th style="border: 1px solid #cbd5e1; padding: 8px; width: 5%;">#</th>
+                            <th style="border: 1px solid #cbd5e1; padding: 8px; width: 50%;">×”×ž×©×™×ž×” / ×”×”×—×œ×˜×”</th>
+                            <th style="border: 1px solid #cbd5e1; padding: 8px; width: 25%;">×‘××—×¨×™×•×ª ×ž×™</th>
+                            <th style="border: 1px solid #cbd5e1; padding: 8px; width: 20%;">×œ×•"×– ×œ×‘×™×¦×•×¢</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #cbd5e1; padding: 8px; text-align:center;">1</td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #cbd5e1; padding: 8px; text-align:center;">2</td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #cbd5e1; padding: 8px; text-align:center;">3</td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                            <td style="border: 1px solid #cbd5e1; padding: 0;"><input type="text" style="width:100%; height:30px; border:none; padding:5px;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <div>×©× ×¢×•×¨×š ×”×™×©×™×‘×”: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 150px; font-family: inherit;"></div>
+                <div>×—×ª×™×ž×”: <input type="text" style="border: none; border-bottom: 1px dashed #000; width: 150px; font-family: inherit;"></div>
+            </div>
+        </div>
+    </div>
+</div></body>
 </html>

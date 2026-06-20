@@ -731,3 +731,11 @@ function addSimpleRow(btn) {
     }
     tbody.appendChild(tr);
 }
+
+function openFormModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.body.classList.add('has-modal');
+    if(window.lucide) {
+        lucide.createIcons();
+    }
+}
