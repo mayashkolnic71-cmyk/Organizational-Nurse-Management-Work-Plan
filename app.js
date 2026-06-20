@@ -263,6 +263,16 @@ window.removeDepartment = function(idx) {
     }
 }
 
+window.searchCalendar = function(query) {
+    if(!calendar || !window.allCalendarEvents) return;
+    const q = query.toLowerCase();
+    const filtered = window.allCalendarEvents.filter(ev => ev.title.toLowerCase().includes(q));
+    
+    calendar.removeAllEventSources();
+    calendar.removeAllEvents();
+    calendar.addEventSource(filtered);
+}
+
 window.addDepartment = function() {
     const input = document.getElementById('new-dept-input');
     if(!input) return;
@@ -573,6 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dynamicEvents.push({ title: 'השתלמות סוגיות סוף החיים וטיפול פליאטיבי', start: '2026-11-15', end: '2026-11-16', classNames: ['training-event'] });
 
     const events = [...baseEvents, ...dynamicEvents];
+    window.allCalendarEvents = events;
 
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
