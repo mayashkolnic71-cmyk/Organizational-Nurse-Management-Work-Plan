@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פורטל ניהול סיעוד - גריאטריה וסיעוד</title>
+    <title>פורטל ניהול אחיות - גריאטריה ואחיות</title>
     
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <aside class="sidebar glass">
             <div class="logo">
                 <i data-lucide="hospital" class="icon-lg"></i>
-                <h2>פורטל ניהול סיעוד</h2>
+                <h2>פורטל ניהול אחיות</h2>
             </div>
             <nav>
                 <a href="#" class="nav-item active" data-tab="dashboard">
@@ -31,7 +31,7 @@
                 </a>
                 <a href="#" class="nav-item" data-tab="org-structure">
                     <i data-lucide="network"></i>
-                    <span>מבנה ארגוני והנהלת סיעוד</span>
+                    <span>מבנה ארגוני והנהלת אחיות</span>
                 </a>
                 <a href="#" class="nav-item" data-tab="training-calendar">
                     <i data-lucide="calendar-check"></i>
@@ -58,7 +58,7 @@
                 <h1>מערכת ניהול, הדרכה ובקרה ארגונית</h1>
                 <div class="user-profile">
                     <div class="avatar">מ</div>
-                    <span>מנהלת סיעוד</span>
+                    <span>מנהלת אחיות</span>
                 </div>
             </header>
 
@@ -105,7 +105,7 @@
                 <section id="core-plan" class="tab-content">
                     <div class="card glass">
                         <h3>תכנית ליבה ותוכנית עבודה שנתית</h3>
-                        <p>כאן תוצג אסטרטגיית הניהול של הסיעוד בארגון ויעדי הליבה לשנה הקרובה, מותאם לחזון הארגוני ויעדי משרד הבריאות.</p>
+                        <p>כאן תוצג אסטרטגיית הניהול של האחיות בארגון ויעדי הליבה לשנה הקרובה, מותאם לחזון הארגוני ויעדי משרד הבריאות.</p>
                         <div class="content-placeholder" style="margin-top:20px; padding:20px; background:rgba(255,255,255,0.05); border-radius:8px;">
                             הגדרת היעדים השנתיים (מבוסס מכרז קודים)...
                         </div>
@@ -116,107 +116,56 @@
                 <section id="org-structure" class="tab-content">
                     <div class="card glass" style="margin-bottom: 20px;">
                         <h3>פיתוח עתודה ניהולית ומנהיגות</h3>
-                        <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב הצוות הסיעודי, ריכוז אחריות משמרת ואחיות בכירות.</p>
+                        <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב צוות האחיות, ריכוז אחריות משמרת ואחיות בכירות.</p>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 20px; overflow-x: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="margin: 0;">תרשים מבנה ארגוני</h3>
+                            <button class="btn btn-sm btn-primary" onclick="resetOrgChart()" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #ef4444;"><i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i> איפוס מבנה</button>
+                        </div>
+                        <p style="margin-bottom:20px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התפקיד או השם בתוך הקובייה לעריכה. השתמש בכפתור ה- <strong>+</strong> להוספת מחלקות / עובדים כפופים.</p>
+                        <div class="org-tree" id="org-chart-root">
+                            <!-- Rendered via JS -->
+                        </div>
                     </div>
 
                     <div class="card glass" style="margin-bottom: 20px;">
-                        <h3>תמהיל כוח אדם</h3>
-                        <p style="margin-bottom:15px; font-size: 0.9rem; color:#cbd5e1;">לחץ על תאי היעד (פנימי/ארצי) בכדי לערוך את הערכים בהתאם למוסד.</p>
-                        <div class="table-responsive">
-                            <table class="staff-table" id="mix-table">
-                                <thead>
-                                    <tr>
-                                        <th>פרמטר</th>
-                                        <th>יעד פנימי / ארצי (ניתן לעריכה)</th>
-                                        <th>2025</th>
-                                        <th>2024</th>
-                                        <th>2023</th>
-                                        <th>2022</th>
-                                        <th>2021</th>
-                                        <th>2020</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>אחוז האחים מוסמכים מכלל האחים ללא תואר</td>
-                                        <td contenteditable="true" class="editable-cell">0 / 0</td>
-                                        <td>5.8% (6)</td>
-                                        <td>7.9% (10)</td>
-                                        <td>14.5%</td>
-                                        <td>23.2%</td>
-                                        <td>20.5%</td>
-                                        <td>12.3%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>אחוז האחים מעשיים מכלל האחים</td>
-                                        <td contenteditable="true" class="editable-cell">0 / 8%</td>
-                                        <td>12% (15)</td>
-                                        <td>16.6% (21)</td>
-                                        <td>16.6% (22)</td>
-                                        <td>17.6%</td>
-                                        <td>18.6%</td>
-                                        <td>17.6%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>אחוז האחים בוגרי על בסיסי</td>
-                                        <td contenteditable="true" class="editable-cell">60% / 50%</td>
-                                        <td>45.6% (47)</td>
-                                        <td>34.6% (43)</td>
-                                        <td>28.7% (37)</td>
-                                        <td>22.4%</td>
-                                        <td>21.18%</td>
-                                        <td>18.46%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>אחוז האחים בעלי הכשרה של נאמני נושא קליני</td>
-                                        <td contenteditable="true" class="editable-cell">50% - 60%</td>
-                                        <td>36.8% (38)</td>
-                                        <td>31.4% (33)</td>
-                                        <td>28% (27)</td>
-                                        <td>8.7%</td>
-                                        <td>7.62%</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>אחוז האחים בעלי תואר שני</td>
-                                        <td contenteditable="true" class="editable-cell">12%</td>
-                                        <td>9.7% (10)</td>
-                                        <td>13.3% (14)</td>
-                                        <td>9%</td>
-                                        <td>8.7%</td>
-                                        <td>7.62%</td>
-                                        <td>8.46%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="margin: 0;">תמהיל כוח אדם</h3>
+                            <div style="display: flex; gap: 8px;">
+                                <input type="number" id="new-year-input" placeholder="שנה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 100px; font-family: inherit;">
+                                <button class="btn btn-sm btn-primary" onclick="addYearColumn()">הוסף שנה</button>
+                            </div>
+                        </div>
+                        <p style="margin-bottom:15px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התאים הרלוונטיים בכדי לערוך את הכמות בפועל ואת הבסיס (N). המערכת תחשב את האחוז אוטומטית. ניתן גם לערוך את היעד הפנימי.</p>
+                        <div class="table-responsive" id="mix-table-container">
+                            <!-- Rendered via JS -->
                         </div>
                     </div>
 
                     <div class="stats-grid">
                         <div class="card glass">
-                            <h3>ריכוז אחריות משמרת</h3>
-                            <ul class="task-list" id="shift-managers">
-                                <li>
-                                    <span>אחראית משמרת: מחלקה א'</span>
-                                    <button class="btn btn-sm" onclick="alert('הדמיית העלאת קובץ...')"><i data-lucide="upload"></i> העלה אישור/חידוש</button>
-                                </li>
-                                <li>
-                                    <span>אחראית משמרת: מחלקה ב'</span>
-                                    <button class="btn btn-sm" onclick="alert('הדמיית העלאת קובץ...')"><i data-lucide="upload"></i> העלה אישור/חידוש</button>
-                                </li>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0;">ריכוז אחריות משמרת</h3>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="new-dept-input" placeholder="שם מחלקה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 140px; font-family: inherit;">
+                                    <button class="btn btn-sm btn-primary" onclick="addDepartment()">הוסף</button>
+                                </div>
+                            </div>
+                            <ul class="task-list" id="shift-managers" style="max-height: 300px; overflow-y: auto; padding-left: 5px;">
+                                <!-- Rendered via JS -->
                             </ul>
                         </div>
                         <div class="card glass">
-                            <h3>הכשרות נאמני נושא ומינויים</h3>
-                            <ul class="task-list" id="topic-trustees">
-                                <li>
-                                    <span>נאמן פצע</span>
-                                    <button class="btn btn-sm"><i data-lucide="upload"></i> צרף כתב מינוי</button>
-                                </li>
-                                <li>
-                                    <span>נאמן זיהומים</span>
-                                    <button class="btn btn-sm"><i data-lucide="upload"></i> צרף כתב מינוי</button>
-                                </li>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0;">הכשרות נאמני נושא ומינויים</h3>
+                                <select id="trustee-dept-select" onchange="renderTrustees()" style="padding: 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; font-family: inherit;">
+                                    <!-- Populated via JS -->
+                                </select>
+                            </div>
+                            <ul class="task-list" id="topic-trustees" style="max-height: 300px; overflow-y: auto; padding-left: 5px;">
+                                <!-- Rendered via JS -->
                             </ul>
                         </div>
                     </div>
@@ -266,7 +215,7 @@
                 <section id="achievements" class="tab-content">
                     <div class="card glass">
                         <h3>הישגים מרכזיים</h3>
-                        <p>ציוני דרך והצלחות ניהוליות ומקצועיות של מערך הסיעוד במוסד לאורך השנה.</p>
+                        <p>ציוני דרך והצלחות ניהוליות ומקצועיות של מערך האחיות במוסד לאורך השנה.</p>
                         <ul class="task-list" style="margin-top: 20px;">
                             <li><span class="dot success"></span> עמידה מלאה בדרישות הבקרה של משרד הבריאות לשנת 2023.</li>
                             <li><span class="dot success"></span> הגדלת אחוז האחיות האקדמאיות ב-15% בשנתיים.</li>
