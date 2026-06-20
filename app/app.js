@@ -544,6 +544,18 @@ document.addEventListener('DOMContentLoaded', function() {
     dynamicEvents.push({ title: 'תוכנית הכשרה מנהיגות לסגל בכיר', start: '2026-11-01', end: '2026-11-05', classNames: ['training-event'] });
     dynamicEvents.push({ title: 'תוכנית לפיתוח מקצועי אחיות מוסמכות (השתלמות לאחמ"ש)', start: '2026-03-01', end: '2026-03-30', classNames: ['training-event'] });
 
+    // פיתוח מקצועי (חת"ש) לאחיות - 10 פעמים בשנה (נדלג על אוגוסט ודצמבר)
+    for(let month = 1; month <= 12; month++) {
+        if(month !== 8 && month !== 12) {
+            let mStr = month.toString().padStart(2, '0');
+            dynamicEvents.push({ title: 'הדרכת פיתוח מקצועי חת"ש - אחיות', start: `2026-${mStr}-17T11:00:00`, end: `2026-${mStr}-17T12:00:00`, classNames: ['training-event'] });
+        }
+    }
+
+    // כנסים והשתלמויות לעדכוני ידע (24 שעות מצטברות)
+    dynamicEvents.push({ title: 'כנס מיומנויות ניהוליות ותקשורת (עדכוני ידע אחיות)', start: '2026-05-20', end: '2026-05-21', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'השתלמות סוגיות סוף החיים וטיפול פליאטיבי', start: '2026-11-15', end: '2026-11-16', classNames: ['training-event'] });
+
     const events = [...baseEvents, ...dynamicEvents];
 
     calendar = new FullCalendar.Calendar(calendarEl, {
