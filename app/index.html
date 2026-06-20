@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מערכת ניהול הדרכות לגריאטריה וסיעוד</title>
+    <title>פורטל ניהול סיעוד - גריאטריה וסיעוד</title>
     
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- FullCalendar JS & CSS -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <!-- Chart.js for Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -23,20 +18,36 @@
         <aside class="sidebar glass">
             <div class="logo">
                 <i data-lucide="hospital" class="icon-lg"></i>
-                <h2>ניהול מוסדות גריאטריים</h2>
+                <h2>פורטל ניהול סיעוד</h2>
             </div>
             <nav>
                 <a href="#" class="nav-item active" data-tab="dashboard">
-                    <i data-lucide="layout-dashboard"></i>
-                    <span>לוח בקרה</span>
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>דאשבורד מדדים ויעדים</span>
                 </a>
-                <a href="#" class="nav-item" data-tab="calendar">
-                    <i data-lucide="calendar-days"></i>
-                    <span>לוח תכנון הדרכות</span>
+                <a href="#" class="nav-item" data-tab="core-plan">
+                    <i data-lucide="target"></i>
+                    <span>תכנית ליבה ועבודה שנתית</span>
                 </a>
-                <a href="#" class="nav-item" data-tab="staff">
-                    <i data-lucide="users"></i>
-                    <span>מעקב צוות והכשרות</span>
+                <a href="#" class="nav-item" data-tab="org-structure">
+                    <i data-lucide="network"></i>
+                    <span>מבנה ארגוני והנהלת סיעוד</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="training-calendar">
+                    <i data-lucide="calendar-check"></i>
+                    <span>הכשרה וכשירות (לוח הדרכות)</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="professionalism">
+                    <i data-lucide="stethoscope"></i>
+                    <span>מקצועיות ומתן טיפול</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="achievements">
+                    <i data-lucide="award"></i>
+                    <span>הישגים מרכזיים</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="appendices">
+                    <i data-lucide="paperclip"></i>
+                    <span>נספחים</span>
                 </a>
             </nav>
         </aside>
@@ -44,61 +55,187 @@
         <!-- Main Content -->
         <main class="main-content">
             <header class="top-header">
-                <h1>מערכת הדרכות - תאימות מכרז קודים 2024</h1>
+                <h1>מערכת ניהול, הדרכה ובקרה ארגונית</h1>
                 <div class="user-profile">
-                    <div class="avatar">א</div>
-                    <span>אחות ראשית / הנהלה</span>
+                    <div class="avatar">מ</div>
+                    <span>מנהלת סיעוד</span>
                 </div>
             </header>
 
             <div class="content-wrapper">
-                <!-- Dashboard Tab -->
+                
+                <!-- 0. Dashboard Tab -->
                 <section id="dashboard" class="tab-content active">
+                    <div class="card glass" style="margin-bottom: 20px;">
+                        <h3>בקרה וניתוח נתונים (Dashboard)</h3>
+                        <p>מעקב אחר התקדמות המוסד ביחס ליעדים הפנימיים והארציים (בהתבסס על תמהיל כוח האדם ומכרז הקודים).</p>
+                    </div>
+
                     <div class="stats-grid">
                         <div class="stat-card glass primary-grad">
-                            <h3>ניקוד הדרכות נוכחי (מתוך 15)</h3>
-                            <div class="value">12 / 15</div>
-                            <p class="subtitle">עמידה בדרישות הרגולציה</p>
+                            <h3>ניקוד הדרכות נוכחי (מכרז)</h3>
+                            <div class="value">13.5 / 15</div>
+                            <p class="subtitle">עמידה ב-90% מיעדי ההדרכה השנתיים</p>
                         </div>
                         <div class="stat-card glass secondary-grad">
-                            <h3>השתתפות אחיות בחת"ש</h3>
-                            <div class="value">75%</div>
-                            <p class="subtitle">היעד השנתי: 70%</p>
+                            <h3>אחיות בוגרות על בסיסי</h3>
+                            <div class="value">45%</div>
+                            <p class="subtitle">יעד מוסדי: 60% <span style="color:#ef4444; font-weight:bold;">(פער של 15%-)</span></p>
                         </div>
                         <div class="stat-card glass accent-grad">
-                            <h3>מטפלים חדשים בהכשרה</h3>
-                            <div class="value">8</div>
-                            <p class="subtitle">קורס 18 שעות בתהליך</p>
+                            <h3>נאמני נושא קליני מוסמכים</h3>
+                            <div class="value">36%</div>
+                            <p class="subtitle">יעד מוסדי: 50% <span style="color:#ef4444; font-weight:bold;">(פער של 14%-)</span></p>
                         </div>
                     </div>
-                    
-                    <div class="dashboard-details">
+
+                    <div class="charts-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
                         <div class="card glass">
-                            <h3>משימות פתוחות</h3>
-                            <ul class="task-list">
+                            <h4 style="margin-bottom: 15px; text-align: center;">התפלגות תמהיל כוח אדם (בפועל לעומת יעד)</h4>
+                            <canvas id="staffMixChart"></canvas>
+                        </div>
+                        <div class="card glass">
+                            <h4 style="margin-bottom: 15px; text-align: center;">התקדמות קורס נאמני נושא (40 שעות)</h4>
+                            <canvas id="trainingProgressChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1. Core Plan Tab -->
+                <section id="core-plan" class="tab-content">
+                    <div class="card glass">
+                        <h3>תכנית ליבה ותוכנית עבודה שנתית</h3>
+                        <p>כאן תוצג אסטרטגיית הניהול של הסיעוד בארגון ויעדי הליבה לשנה הקרובה, מותאם לחזון הארגוני ויעדי משרד הבריאות.</p>
+                        <div class="content-placeholder" style="margin-top:20px; padding:20px; background:rgba(255,255,255,0.05); border-radius:8px;">
+                            הגדרת היעדים השנתיים (מבוסס מכרז קודים)...
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Org Structure Tab -->
+                <section id="org-structure" class="tab-content">
+                    <div class="card glass" style="margin-bottom: 20px;">
+                        <h3>פיתוח עתודה ניהולית ומנהיגות</h3>
+                        <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב הצוות הסיעודי, ריכוז אחריות משמרת ואחיות בכירות.</p>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 20px;">
+                        <h3>תמהיל כוח אדם</h3>
+                        <p style="margin-bottom:15px; font-size: 0.9rem; color:#cbd5e1;">לחץ על תאי היעד (פנימי/ארצי) בכדי לערוך את הערכים בהתאם למוסד.</p>
+                        <div class="table-responsive">
+                            <table class="staff-table" id="mix-table">
+                                <thead>
+                                    <tr>
+                                        <th>פרמטר</th>
+                                        <th>יעד פנימי / ארצי (ניתן לעריכה)</th>
+                                        <th>2025</th>
+                                        <th>2024</th>
+                                        <th>2023</th>
+                                        <th>2022</th>
+                                        <th>2021</th>
+                                        <th>2020</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>אחוז האחים מוסמכים מכלל האחים ללא תואר</td>
+                                        <td contenteditable="true" class="editable-cell">0 / 0</td>
+                                        <td>5.8% (6)</td>
+                                        <td>7.9% (10)</td>
+                                        <td>14.5%</td>
+                                        <td>23.2%</td>
+                                        <td>20.5%</td>
+                                        <td>12.3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>אחוז האחים מעשיים מכלל האחים</td>
+                                        <td contenteditable="true" class="editable-cell">0 / 8%</td>
+                                        <td>12% (15)</td>
+                                        <td>16.6% (21)</td>
+                                        <td>16.6% (22)</td>
+                                        <td>17.6%</td>
+                                        <td>18.6%</td>
+                                        <td>17.6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>אחוז האחים בוגרי על בסיסי</td>
+                                        <td contenteditable="true" class="editable-cell">60% / 50%</td>
+                                        <td>45.6% (47)</td>
+                                        <td>34.6% (43)</td>
+                                        <td>28.7% (37)</td>
+                                        <td>22.4%</td>
+                                        <td>21.18%</td>
+                                        <td>18.46%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>אחוז האחים בעלי הכשרה של נאמני נושא קליני</td>
+                                        <td contenteditable="true" class="editable-cell">50% - 60%</td>
+                                        <td>36.8% (38)</td>
+                                        <td>31.4% (33)</td>
+                                        <td>28% (27)</td>
+                                        <td>8.7%</td>
+                                        <td>7.62%</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>אחוז האחים בעלי תואר שני</td>
+                                        <td contenteditable="true" class="editable-cell">12%</td>
+                                        <td>9.7% (10)</td>
+                                        <td>13.3% (14)</td>
+                                        <td>9%</td>
+                                        <td>8.7%</td>
+                                        <td>7.62%</td>
+                                        <td>8.46%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="card glass">
+                            <h3>ריכוז אחריות משמרת</h3>
+                            <ul class="task-list" id="shift-managers">
                                 <li>
-                                    <span class="dot warning"></span>
-                                    <span>השלמת קורס 40 שעות ל-3 מטפלים חדשים עד סוף החודש</span>
+                                    <span>אחראית משמרת: מחלקה א'</span>
+                                    <button class="btn btn-sm" onclick="alert('הדמיית העלאת קובץ...')"><i data-lucide="upload"></i> העלה אישור/חידוש</button>
                                 </li>
                                 <li>
-                                    <span class="dot danger"></span>
-                                    <span>חסרים נאמני מניעת זיהומים במחלקות מונשמים</span>
+                                    <span>אחראית משמרת: מחלקה ב'</span>
+                                    <button class="btn btn-sm" onclick="alert('הדמיית העלאת קובץ...')"><i data-lucide="upload"></i> העלה אישור/חידוש</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card glass">
+                            <h3>הכשרות נאמני נושא ומינויים</h3>
+                            <ul class="task-list" id="topic-trustees">
+                                <li>
+                                    <span>נאמן פצע</span>
+                                    <button class="btn btn-sm"><i data-lucide="upload"></i> צרף כתב מינוי</button>
                                 </li>
                                 <li>
-                                    <span class="dot success"></span>
-                                    <span>דיווח שעות הדרכה (חת"ש) לשנת 2025 אושר</span>
+                                    <span>נאמן זיהומים</span>
+                                    <button class="btn btn-sm"><i data-lucide="upload"></i> צרף כתב מינוי</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <!-- Calendar Tab -->
-                <section id="calendar" class="tab-content">
+                <!-- 3. Training & Competency Tab -->
+                <section id="training-calendar" class="tab-content">
                     <div class="card glass full-height" style="display: flex; flex-direction: column;">
                         <div class="card-header" style="margin-bottom: 15px;">
-                            <h3>פריסת הדרכות שנתית - שילוב חגי ישראל (Drag & Drop)</h3>
-                            <p style="color: #64748b; font-size: 0.9rem;">יש לגרור את ההדרכות לתאריכים הרצויים. חגים ומועדים מסומנים בצבע כדי למנוע התנגשויות.</p>
+                            <h3>הכשרה וכשירות - פריסת הדרכות שנתית (כולל חגי ישראל)</h3>
+                            <div class="instruction-box" style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 8px; border-right: 4px solid var(--primary); margin-top: 10px;">
+                                <h4 style="margin-bottom: 8px; color: #fff;">הנחיות עבודה נדרשות (מכרז קודים):</h4>
+                                <ul style="list-style-type: none; font-size: 0.9rem; line-height: 1.6;">
+                                    <li><i data-lucide="check-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle;"></i> כל מפגש/הדרכה/ועדה מחייב פרוטוקול וחתימת המשתתפים.</li>
+                                    <li><i data-lucide="check-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle;"></i> יש לשלוח פרוטוקול ולהדפיסו לתיק הרלוונטי.</li>
+                                    <li><i data-lucide="check-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle;"></i> בישיבות צוות מחלקתיות חובה להחתים נוכחים לקבלת הדרכה.</li>
+                                    <li><i data-lucide="check-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle;"></i> הכשרה פורמלית (40 שעות) לנאמני נושא קליניים נדרשת בכל מחלקה.</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="calendar-container" style="flex: 1; background: white; padding: 20px; border-radius: 12px; color: #1e293b;">
                             <div id="fullcalendar-view"></div>
@@ -106,32 +243,92 @@
                     </div>
                 </section>
 
-                <!-- Staff Tab -->
-                <section id="staff" class="tab-content">
+                <!-- 4. Professionalism Tab -->
+                <section id="professionalism" class="tab-content">
                     <div class="card glass">
-                        <div class="card-header">
-                            <h3>סטטוס הכשרות - צוות רב מקצועי</h3>
-                            <button class="btn btn-primary"><i data-lucide="user-plus"></i> קליטת עובד חדש</button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="staff-table">
-                                <thead>
-                                    <tr>
-                                        <th>שם העובד</th>
-                                        <th>מקצוע / תפקיד</th>
-                                        <th>מחלקה</th>
-                                        <th>הכשרת בסיס / חת"ש</th>
-                                        <th>נאמן נושא / העצמה</th>
-                                        <th>סטטוס עמידה במכרז</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="staff-table-body">
-                                    <!-- Populated by JS -->
-                                </tbody>
-                            </table>
+                        <h3>מקצועיות ומתן טיפול</h3>
+                        <p>הצגת פרויקטים מקומיים במחלקות לפי תחומי רכזי אורך ורוחב.</p>
+                        
+                        <div class="projects-grid" style="margin-top: 20px; display: grid; gap: 15px; grid-template-columns: 1fr 1fr;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: var(--primary-light);">פרויקט מניעת זיהומים במחלקות מונשמים</h4>
+                                <p style="font-size:0.9rem; margin-top:10px;">רכז רוחב: נאמן זיהומים</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: var(--primary-light);">פרויקט שיפור טיפול בפצעים קשי ריפוי</h4>
+                                <p style="font-size:0.9rem; margin-top:10px;">רכז אורך: אחות אחראית פצע</p>
+                            </div>
                         </div>
                     </div>
                 </section>
+
+                <!-- 5. Achievements Tab -->
+                <section id="achievements" class="tab-content">
+                    <div class="card glass">
+                        <h3>הישגים מרכזיים</h3>
+                        <p>ציוני דרך והצלחות ניהוליות ומקצועיות של מערך הסיעוד במוסד לאורך השנה.</p>
+                        <ul class="task-list" style="margin-top: 20px;">
+                            <li><span class="dot success"></span> עמידה מלאה בדרישות הבקרה של משרד הבריאות לשנת 2023.</li>
+                            <li><span class="dot success"></span> הגדלת אחוז האחיות האקדמאיות ב-15% בשנתיים.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 6. Appendices Tab -->
+                <section id="appendices" class="tab-content">
+                    <div class="card glass">
+                        <h3>נספחים (טפסים ומסמכים)</h3>
+                        <p style="margin-bottom:20px;">מאגר טפסים ומסמכי רגולציה נדרשים לניהול הדרכות ומשמרות.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="file-item">
+                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <div style="flex:1;">
+                                    <h4>טופס כתב מינוי לנאמן נושא</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">תבנית למילוי וחתימה</span>
+                                </div>
+                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <div class="file-item">
+                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <div style="flex:1;">
+                                    <h4>טופס אחריות משמרת</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">מסמך האצלת סמכויות לאחות אחראית משמרת</span>
+                                </div>
+                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <div class="file-item">
+                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <div style="flex:1;">
+                                    <h4>טופס החתמת נוכחות בהדרכה</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">טופס חובה לכל ישיבה מחלקתית / ועדת היגוי</span>
+                                </div>
+                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <div class="file-item">
+                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <div style="flex:1;">
+                                    <h4>טופס פורמט מובנה לפרוטוקול ועדה</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">סיכום ישיבת ועדה, החלטות ומעקב ביצוע</span>
+                                </div>
+                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <div class="file-item">
+                                <i data-lucide="file-text" style="color:var(--danger);"></i>
+                                <div style="flex:1;">
+                                    <h4>מכרז הקודים המקורי (משרד הבריאות)</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">דרישות הרגולציה מ-2024 והלאה (15 נק' הדרכות)</span>
+                                </div>
+                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </main>
     </div>

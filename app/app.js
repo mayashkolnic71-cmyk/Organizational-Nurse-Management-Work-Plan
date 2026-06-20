@@ -18,8 +18,8 @@ navItems.forEach(item => {
         const tabId = item.getAttribute('data-tab');
         document.getElementById(tabId).classList.add('active');
         
-        // Render calendar if calendar tab is selected
-        if(tabId === 'calendar' && calendar) {
+        // Render calendar if training-calendar tab is selected
+        if(tabId === 'training-calendar' && calendar) {
             setTimeout(() => {
                 calendar.render();
             }, 100);
@@ -27,28 +27,16 @@ navItems.forEach(item => {
     });
 });
 
-// Mock Staff Data based on generic requirements
-const staffData = [
-    { name: 'ישראל ישראלי', role: 'אח מוסמך', dept: 'שיקום א', basic: 'בוצע (חת"ש 20 שעות)', empowerment: 'נאמן כאב (3 מפגשים)', status: 'success', statusText: 'כשיר' },
-    { name: 'דוד כהן', role: 'מטפל/כוח עזר', dept: 'שיקום ב', basic: 'קורס המשכי (40 שעות)', empowerment: 'אחראי קליטה', status: 'success', statusText: 'כשיר' },
-    { name: 'שרה לוי', role: 'אחות מוסמכת', dept: 'מונשמים ג', basic: 'בוצע (חת"ש 20 שעות)', empowerment: 'נאמנת מניעת זיהומים', status: 'success', statusText: 'כשיר' },
-    { name: 'אחמד מנסור', role: 'מטפל חדש', dept: 'מונשמים א', basic: 'בהכשרה ראשונית (18 שעות)', empowerment: 'טרם מונה', status: 'warning', statusText: 'בתהליך' },
-    { name: 'מיכל דהן', role: 'מרפאה בעיסוק', dept: 'מקצועות הבריאות', basic: 'עדכון ידע (20 שעות)', empowerment: '-', status: 'success', statusText: 'כשיר' },
-    { name: 'יעל כץ', role: 'כוח עזר', dept: 'שיקום א', basic: 'חסר עדכון ידע שנתי', empowerment: '-', status: 'danger', statusText: 'חריגה' }
-];
-
-const staffTableBody = document.getElementById('staff-table-body');
-staffData.forEach(staff => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-        <td>${staff.name}</td>
-        <td>${staff.role}</td>
-        <td>${staff.dept}</td>
-        <td>${staff.basic}</td>
-        <td>${staff.empowerment}</td>
-        <td><span class="badge ${staff.status}">${staff.statusText}</span></td>
-    `;
-    staffTableBody.appendChild(tr);
+// Editable table logic simulation (saving to localStorage if desired, currently just visuals)
+document.querySelectorAll('.editable-cell').forEach(cell => {
+    cell.addEventListener('blur', (e) => {
+        console.log('Value updated to:', e.target.innerText);
+        // Simulate saving
+        e.target.style.background = 'rgba(16, 185, 129, 0.2)'; // Flash green
+        setTimeout(() => {
+            e.target.style.background = 'rgba(59, 130, 246, 0.1)'; // Back to normal
+        }, 1000);
+    });
 });
 
 // FullCalendar Initialization
@@ -57,10 +45,10 @@ let calendar;
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('fullcalendar-view');
 
-    // Mock Events: Holidays and Trainings for 2026
+    // Mock Events: Holidays and Required Trainings/Forums
     const events = [
         // Holidays (Background events or all-day blockers)
-        { title: 'פורים', start: '2026-04-02', end: '2026-04-09', display: 'background', classNames: ['holiday-event'] },
+        { title: 'פסח', start: '2026-04-02', end: '2026-04-09', display: 'background', classNames: ['holiday-event'] },
         { title: 'יום העצמאות', start: '2026-04-22', allDay: true, display: 'background', classNames: ['holiday-event'] },
         { title: 'שבועות', start: '2026-05-22', allDay: true, display: 'background', classNames: ['holiday-event'] },
         { title: 'ראש השנה', start: '2026-09-12', end: '2026-09-14', display: 'background', classNames: ['holiday-event'] },
@@ -68,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { title: 'סוכות', start: '2026-09-26', end: '2026-10-04', display: 'background', classNames: ['holiday-event'] },
         
         // Training Events (Draggable)
-        { title: 'קורס ראשוני מטפלים (18 שעות)', start: '2026-01-14', end: '2026-01-17', classNames: ['training-event'] },
-        { title: 'קורס המשכי מטפלים (40 שעות)', start: '2026-02-15', end: '2026-02-28', classNames: ['training-event'] },
-        { title: 'פיתוח מקצועי אחיות חת"ש', start: '2026-03-05', end: '2026-03-07', classNames: ['training-event'] },
-        { title: 'מפגש נאמני כאב ופצע (1/3)', start: '2026-04-15', allDay: true, classNames: ['training-event'] },
-        { title: 'הדרכת בטיחות והחייאה (חובה)', start: '2026-05-15', end: '2026-05-20', classNames: ['training-event'] },
-        { title: 'עדכון ידע מקצועות הבריאות', start: '2026-06-01', end: '2026-06-10', classNames: ['training-event'] }
+        { title: 'פיתוח מקצועי במחלקות (שעה 1)', start: '2026-01-10T10:00:00', end: '2026-01-10T11:00:00', classNames: ['training-event'] },
+        { title: 'הדרכות חובה (שעה 1)', start: '2026-01-15T12:00:00', end: '2026-01-15T13:00:00', classNames: ['training-event'] },
+        { title: 'פורום נאמני נושא (רבעון 1)', start: '2026-03-01T14:00:00', end: '2026-03-01T15:00:00', classNames: ['training-event'] },
+        { title: 'הכשרה פורמלית נאמני נושא (40 שעות)', start: '2026-02-15', end: '2026-02-28', classNames: ['training-event'] },
+        { title: 'ועדת בטיחות ומניעת זיהומים', start: '2026-03-10T13:00:00', end: '2026-03-10T14:00:00', classNames: ['training-event'] },
+        { title: 'פורום נאמני נושא (רבעון 2)', start: '2026-06-01T14:00:00', end: '2026-06-01T15:00:00', classNames: ['training-event'] }
     ];
 
     calendar = new FullCalendar.Calendar(calendarEl, {
@@ -96,15 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         events: events,
         initialDate: '2026-01-01', // Start looking at 2026
         eventDrop: function(info) {
-            console.log(info.event.title + " נגרר ל- " + info.event.start.toISOString());
-            
             // Basic conflict check warning with holidays (naive check)
-            if(info.event.start.toISOString().includes('04-02') || info.event.start.toISOString().includes('09-12')) {
-                alert('שים לב: תזמנת הדרכה על תאריך של חג/מועד!');
+            const dateStr = info.event.start.toISOString();
+            if(dateStr.includes('04-02') || dateStr.includes('09-12') || dateStr.includes('09-21')) {
+                alert('שים לב: תזמנת הדרכה או ועדה על תאריך של חג/מועד!');
             }
-        },
-        eventResize: function(info) {
-            console.log(info.event.title + " שונה ל- " + info.event.end.toISOString());
         }
     });
 });
