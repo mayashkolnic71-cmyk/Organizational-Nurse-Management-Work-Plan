@@ -507,7 +507,7 @@ p { color: #e2e8f0; line-height: 1.5; }
     font-weight: 800;
     color: #1e3a8a;
     box-shadow: 0 0 25px rgba(0,0,0,0.2);
-    border: 5px solid #f8fafc;
+    border: 6px solid #eab308; /* Yellow/Orange border */
 }
 
 .wb-ring {
@@ -519,9 +519,9 @@ p { color: #e2e8f0; line-height: 1.5; }
     width: 600px;
     height: 600px;
     z-index: 1;
-    background: radial-gradient(circle, #0284c7 0%, #1e3a8a 100%);
+    background: radial-gradient(circle, #1e3a8a 0%, #0284c7 100%); /* Dark center fading to light blue edge */
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    border: 6px solid #f8fafc; /* White outer border from screenshot */
+    border: 6px solid #f8fafc; /* White outer border */
     position: relative;
     display: flex;
     justify-content: center;
@@ -576,7 +576,7 @@ q4 (Top-Left) points Top
     margin: -55px 0 0 -55px;
     background: white;
     border-radius: 50%;
-    border: 3px solid #facc15; /* Yellow border */
+    border: 3px solid #0ea5e9; /* Light blue border */
     display: flex;
     justify-content: center;
     align-items: center;
