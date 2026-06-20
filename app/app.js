@@ -495,9 +495,18 @@ document.addEventListener('DOMContentLoaded', function() {
         { title: 'ראש השנה', start: '2026-09-12', end: '2026-09-14', display: 'background', classNames: ['holiday-event'] },
         { title: 'יום כיפור', start: '2026-09-21', allDay: true, display: 'background', classNames: ['holiday-event'] },
         { title: 'סוכות', start: '2026-09-26', end: '2026-10-04', display: 'background', classNames: ['holiday-event'] },
+        { title: 'יום השואה', start: '2026-04-21', allDay: true, display: 'background', classNames: ['holiday-event'] },
         
-        // אירועים חד-שנתיים והוקרה
-        { title: 'יום האחות הבינלאומי ואירוע הוקרה סקטוריאלי', start: '2026-05-12', allDay: true, classNames: ['training-event'] },
+        // ימי מודעות והוקרה
+        { title: 'יום האחות הבינלאומי', start: '2026-05-12', allDay: true, classNames: ['training-event'] },
+        { title: 'יום הרופא', start: '2026-01-11', allDay: true, classNames: ['training-event'] },
+        { title: 'יום העובד הסוציאלי הבינלאומי', start: '2026-03-17', allDay: true, classNames: ['training-event'] },
+        { title: 'יום הריפוי בעיסוק', start: '2026-10-27', allDay: true, classNames: ['training-event'] },
+        { title: 'יום הפיזיותרפיה', start: '2026-09-08', allDay: true, classNames: ['training-event'] },
+        { title: 'יום המודעות בנושא התעמרות בזקנים', start: '2026-06-15', allDay: true, classNames: ['training-event'] },
+        { title: 'יום המודעות לדמנציה (אלצהיימר)', start: '2026-09-21', allDay: true, classNames: ['training-event'] },
+        { title: 'יום הזקן הבינלאומי', start: '2026-10-01', allDay: true, classNames: ['training-event'] },
+        
         { title: 'אירועי הוקרה והערכה - חגי תשרי', start: '2026-09-10', allDay: true, classNames: ['training-event'] },
         { title: 'פורום רב תחומי - חווית המטופל/המטפל', start: '2026-07-15T10:00:00', end: '2026-07-15T14:00:00', classNames: ['training-event'] },
         
@@ -518,7 +527,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // אירועים רבעוניים
         if(month % 3 === 0) {
             dynamicEvents.push({ title: 'מפגש סגנים רבעוני', start: `2026-${mStr}-10T10:00:00`, classNames: ['training-event'] });
-            dynamicEvents.push({ title: 'ישיבות רבעוניות של וועדות מקצועיות (בטיחות, זיהומים, תרופות)', start: `2026-${mStr}-12T12:00:00`, classNames: ['training-event'] });
+            dynamicEvents.push({ title: 'וועדות מקצועיות: בטיחות, זיהומים, תרופות והתעמרות', start: `2026-${mStr}-12T12:00:00`, classNames: ['training-event'] });
+            dynamicEvents.push({ title: 'וועדת טיפול פליאטיבי וטיפול תומך', start: `2026-${mStr}-13T12:00:00`, classNames: ['training-event'] });
             dynamicEvents.push({ title: 'פורום מקצועי נאמני נושא רבעוני', start: `2026-${mStr}-18T14:00:00`, classNames: ['training-event'] });
         }
         
@@ -554,7 +564,13 @@ document.addEventListener('DOMContentLoaded', function() {
         editable: true, // Enable drag & drop
         droppable: true,
         events: events,
-        initialDate: '2026-01-01', // Start looking at 2026
+        initialDate: '2026-01-01', 
+        eventClick: function(info) {
+            const newTitle = prompt('ערוך את שם האירוע:', info.event.title);
+            if (newTitle !== null && newTitle.trim() !== '') {
+                info.event.setProp('title', newTitle);
+            }
+        },
         eventDrop: function(info) {
             // Basic conflict check warning with holidays (naive check)
             const dateStr = info.event.start.toISOString();
