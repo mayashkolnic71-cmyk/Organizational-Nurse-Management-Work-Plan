@@ -480,7 +480,7 @@ let calendar;
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('fullcalendar-view');
 
-    const events = [
+    const baseEvents = [
         { title: 'פסח', start: '2026-04-02', end: '2026-04-09', display: 'background', classNames: ['holiday-event'] },
         { title: 'יום העצמאות', start: '2026-04-22', allDay: true, display: 'background', classNames: ['holiday-event'] },
         { title: 'שבועות', start: '2026-05-22', allDay: true, display: 'background', classNames: ['holiday-event'] },
@@ -488,13 +488,45 @@ document.addEventListener('DOMContentLoaded', function() {
         { title: 'יום כיפור', start: '2026-09-21', allDay: true, display: 'background', classNames: ['holiday-event'] },
         { title: 'סוכות', start: '2026-09-26', end: '2026-10-04', display: 'background', classNames: ['holiday-event'] },
         
-        { title: 'פיתוח מקצועי במחלקות (שעה 1)', start: '2026-01-10T10:00:00', end: '2026-01-10T11:00:00', classNames: ['training-event'] },
-        { title: 'הדרכות חובה (שעה 1)', start: '2026-01-15T12:00:00', end: '2026-01-15T13:00:00', classNames: ['training-event'] },
-        { title: 'פורום נאמני נושא (רבעון 1)', start: '2026-03-01T14:00:00', end: '2026-03-01T15:00:00', classNames: ['training-event'] },
-        { title: 'הכשרה פורמלית נאמני נושא (40 שעות)', start: '2026-02-15', end: '2026-02-28', classNames: ['training-event'] },
-        { title: 'ועדת בטיחות ומניעת זיהומים', start: '2026-03-10T13:00:00', end: '2026-03-10T14:00:00', classNames: ['training-event'] },
-        { title: 'פורום נאמני נושא (רבעון 2)', start: '2026-06-01T14:00:00', end: '2026-06-01T15:00:00', classNames: ['training-event'] }
+        // אירועים חד-שנתיים והוקרה
+        { title: 'יום האחות הבינלאומי ואירוע הוקרה סקטוריאלי', start: '2026-05-12', allDay: true, classNames: ['training-event'] },
+        { title: 'אירועי הוקרה והערכה - חגי תשרי', start: '2026-09-10', allDay: true, classNames: ['training-event'] },
+        { title: 'פורום רב תחומי - חווית המטופל/המטפל', start: '2026-07-15T10:00:00', end: '2026-07-15T14:00:00', classNames: ['training-event'] },
+        
+        // אירועים שבועיים קבועים
+        { title: 'ג\'ורנל קלאב ודיונים קליניים לצוות רפואי ואחיות בכיר', daysOfWeek: [4], startTime: '13:00:00', endTime: '14:30:00', classNames: ['training-event'] }, // יום חמישי
+        { title: 'פורום חטיבתי (מונשמים/שיקום/אשפוז כרוני)', daysOfWeek: [2], startTime: '09:00:00', endTime: '10:00:00', classNames: ['training-event'] }, // יום שלישי
+        { title: 'ישיבות סקטוריאליות שוטפות', daysOfWeek: [3], startTime: '11:00:00', endTime: '12:00:00', classNames: ['training-event'] } // יום רביעי
     ];
+
+    const dynamicEvents = [];
+    for(let month = 1; month <= 12; month++) {
+        let mStr = month.toString().padStart(2, '0');
+        // אירועים חודשיים
+        dynamicEvents.push({ title: 'ישיבת צוות אחיות אחראיות', start: `2026-${mStr}-05T10:00:00`, end: `2026-${mStr}-05T12:00:00`, classNames: ['training-event'] });
+        dynamicEvents.push({ title: 'ישיבות מחלקתיות', start: `2026-${mStr}-15T13:00:00`, end: `2026-${mStr}-15T14:00:00`, classNames: ['training-event'] });
+        dynamicEvents.push({ title: 'הדרכות מקוונות והדרכות פנים', start: `2026-${mStr}-20T12:00:00`, end: `2026-${mStr}-20T14:00:00`, classNames: ['training-event'] });
+
+        // אירועים רבעוניים
+        if(month % 3 === 0) {
+            dynamicEvents.push({ title: 'מפגש סגנים רבעוני', start: `2026-${mStr}-10T10:00:00`, classNames: ['training-event'] });
+            dynamicEvents.push({ title: 'ישיבות רבעוניות של וועדות מקצועיות (בטיחות, זיהומים, תרופות)', start: `2026-${mStr}-12T12:00:00`, classNames: ['training-event'] });
+            dynamicEvents.push({ title: 'פורום מקצועי נאמני נושא רבעוני', start: `2026-${mStr}-18T14:00:00`, classNames: ['training-event'] });
+        }
+        
+        // אירועים חצי שנתיים
+        if(month % 6 === 0) {
+            dynamicEvents.push({ title: 'ישיבת צוות בכיר סקטוריאלי', start: `2026-${mStr}-25T09:00:00`, end: `2026-${mStr}-25T13:00:00`, classNames: ['training-event'] });
+        }
+    }
+    
+    // הכשרות מיוחדות בטווח תאריכים
+    dynamicEvents.push({ title: 'הכשרה פורמלית נאמני נושא (40 שעות)', start: '2026-02-15', end: '2026-02-28', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'מערך מסע מוסדר לקליטת אחות חדשה', start: '2026-08-01', end: '2026-08-14', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'תוכנית הכשרה מנהיגות לסגל בכיר', start: '2026-11-01', end: '2026-11-05', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'תוכנית לפיתוח מקצועי אחיות מוסמכות (השתלמות לאחמ"ש)', start: '2026-03-01', end: '2026-03-30', classNames: ['training-event'] });
+
+    const events = [...baseEvents, ...dynamicEvents];
 
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
