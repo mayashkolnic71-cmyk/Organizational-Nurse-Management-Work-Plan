@@ -276,14 +276,62 @@ window.removeDepartment = function(idx) {
     }
 }
 
+window.currentSearchResults = [];
+window.currentSearchIndex = -1;
+
 window.searchCalendar = function(query) {
     if(!calendar || !window.allCalendarEvents) return;
     const q = query.toLowerCase();
+    
+    const infoDiv = document.getElementById('search-results-info');
+    const textSpan = document.getElementById('search-count-text');
+
+    if (!q) {
+        calendar.removeAllEventSources();
+        calendar.removeAllEvents();
+        calendar.addEventSource(window.allCalendarEvents);
+        if(infoDiv) infoDiv.style.display = 'none';
+        window.currentSearchResults = [];
+        window.currentSearchIndex = -1;
+        return;
+    }
+    
     const filtered = window.allCalendarEvents.filter(ev => ev.title.toLowerCase().includes(q));
+    window.currentSearchResults = filtered.sort((a, b) => new Date(a.start) - new Date(b.start));
     
     calendar.removeAllEventSources();
     calendar.removeAllEvents();
     calendar.addEventSource(filtered);
+    
+    if(infoDiv && textSpan) {
+        if (filtered.length > 0) {
+            infoDiv.style.display = 'flex';
+            window.currentSearchIndex = 0;
+            updateSearchText();
+            calendar.gotoDate(filtered[0].start);
+        } else {
+            infoDiv.style.display = 'flex';
+            textSpan.innerText = `לא נמצאו אירועים`;
+            window.currentSearchIndex = -1;
+        }
+    }
+}
+
+function updateSearchText() {
+    const textSpan = document.getElementById('search-count-text');
+    if(textSpan && window.currentSearchResults.length > 0) {
+        textSpan.innerText = `אירוע ${window.currentSearchIndex + 1} מתוך ${window.currentSearchResults.length}`;
+    }
+}
+
+window.jumpToSearchResult = function(direction) {
+    if (window.currentSearchResults.length === 0) return;
+    window.currentSearchIndex += direction;
+    if (window.currentSearchIndex >= window.currentSearchResults.length) window.currentSearchIndex = 0;
+    if (window.currentSearchIndex < 0) window.currentSearchIndex = window.currentSearchResults.length - 1;
+    
+    calendar.gotoDate(window.currentSearchResults[window.currentSearchIndex].start);
+    updateSearchText();
 }
 
 window.addDepartment = function() {

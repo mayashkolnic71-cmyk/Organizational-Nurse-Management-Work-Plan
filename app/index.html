@@ -769,8 +769,13 @@
                         </div>
                         <!-- Trustees Infographic -->
                         <div class="calendar-container" style="flex: 1; background: white; padding: 20px; border-radius: 12px; color: #1e293b;">
-                            <div style="margin-bottom: 15px;">
+                            <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                                 <input type="text" id="calendar-search" placeholder="חיפוש בלוח השנה..." style="padding: 10px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;" onkeyup="searchCalendar(this.value)">
+                                <div id="search-results-info" style="color: #64748b; font-size: 0.95rem; display: none; align-items: center; gap: 10px;">
+                                    <span id="search-count-text" style="font-weight: bold;"></span>
+                                    <button class="btn btn-sm btn-outline" style="padding: 4px 10px; color:#3b82f6; border-color:#3b82f6;" onclick="jumpToSearchResult(-1)"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> הקודם</button>
+                                    <button class="btn btn-sm btn-outline" style="padding: 4px 10px; color:#3b82f6; border-color:#3b82f6;" onclick="jumpToSearchResult(1)">הבא <i data-lucide="chevron-left" style="width: 14px; height: 14px;"></i></button>
+                                </div>
                             </div>
                             <div id="fullcalendar-view"></div>
                         </div>
