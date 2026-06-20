@@ -113,30 +113,32 @@
                         </div>
                         
                         <div class="wellbeing-container">
-                            <div class="wb-ellipse"></div>
-                            
-                            <!-- Pie Chart -->
-                            <div class="wb-pie">
-                                <div class="wb-quad q1"><span>ארגון</span></div>
-                                <div class="wb-quad q2"><span>מנהיגים</span></div>
-                                <div class="wb-quad q3"><span>עובדים</span></div>
-                                <div class="wb-quad q4"><span>צוותים</span></div>
+                            <!-- Background Arrow Ring (optional visual enhancement) -->
+                            <div class="wb-ring outer-ring">
+                                <!-- 11 circles -->
+                                <div class="wb-node" style="--i: 0;"><span>אושר, הנע/אה, תקווה</span></div>
+                                <div class="wb-node" style="--i: 1;"><span>שייכות וגאוות יחידה</span></div>
+                                <div class="wb-node" style="--i: 2;"><span>משמעות בעשייה</span></div>
+                                <div class="wb-node" style="--i: 3;"><span>יעילות וגמישות בעבודה</span></div>
+                                <div class="wb-node" style="--i: 4;"><span>להיות מוערך</span></div>
+                                <div class="wb-node" style="--i: 5;"><span>פיתוח אישי, הכשרה והעשרה</span></div>
+                                <div class="wb-node" style="--i: 6;"><span>סביבת העבודה</span></div>
+                                <div class="wb-node" style="--i: 7;"><span>תהליכי עבודה</span></div>
+                                <div class="wb-node" style="--i: 8;"><span>קהילה בעבודה</span></div>
+                                <div class="wb-node" style="--i: 9;"><span>מרחב בטוח ופתוח לביטוי רגשי</span></div>
+                                <div class="wb-node" style="--i: 10;"><span>איזון בית-עבודה</span></div>
+                            </div>
+
+                            <!-- Inner Ring (Quadrants) -->
+                            <div class="wb-ring inner-ring">
+                                <div class="wb-quad q1"><span>עובדים</span></div> <!-- Right -->
+                                <div class="wb-quad q2"><span>צוותים</span></div> <!-- Bottom -->
+                                <div class="wb-quad q3"><span>ארגון</span></div> <!-- Left -->
+                                <div class="wb-quad q4"><span>מנהיגים</span></div> <!-- Top -->
                             </div>
                             
-                            <!-- Center Node -->
-                            <div class="wb-center-node">שלומות</div>
-                            
-                            <!-- Small Orbiting Nodes -->
-                            <div class="wb-node" style="top: 30px; left: 400px;"><span>אושר, הנע/אה, תקווה</span></div>
-                            <div class="wb-node" style="top: 90px; left: 560px;"><span>שייכות וגאוות יחידה</span></div>
-                            <div class="wb-node" style="top: 240px; left: 660px; z-index: 1;"><span>משמעות בעשייה</span></div>
-                            <div class="wb-node" style="top: 570px; left: 620px;"><span>להיות מוערך</span></div>
-                            <div class="wb-node" style="top: 660px; left: 460px;"><span>פיתוח אישי, הכשרה והעשרה</span></div>
-                            <div class="wb-node" style="top: 660px; left: 310px;"><span>סביבת העבודה</span></div>
-                            <div class="wb-node" style="top: 560px; left: 180px;"><span>תהליכי עבודה</span></div>
-                            <div class="wb-node" style="top: 410px; left: 110px;"><span>קהילה בעבודה</span></div>
-                            <div class="wb-node" style="top: 230px; left: 130px;"><span>מרחב בטוח ופתוח לביטוי רגשי</span></div>
-                            <div class="wb-node" style="top: 90px; left: 250px;"><span>איזון בית-עבודה</span></div>
+                            <!-- Center -->
+                            <div class="wb-center">שלומות</div>
                         </div>
                     </div>
                 </section>
@@ -316,29 +318,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="calendar-container" style="flex: 1; background: white; padding: 20px; border-radius: 12px; color: #1e293b;">
-                            <div id="fullcalendar-view"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 4. Professionalism Tab -->
-                <section id="professionalism" class="tab-content">
-                    <div class="card glass">
-                        <h3>מקצועיות ומתן טיפול</h3>
-                        <p>הצגת פרויקטים מקומיים במחלקות לפי תחומי רכזי אורך ורוחב.</p>
-                        
-                        <div class="projects-grid" style="margin-top: 20px; display: grid; gap: 15px; grid-template-columns: 1fr 1fr;">
-                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
-                                <h4 style="color: var(--primary-light);">פרויקט מניעת זיהומים במחלקות מונשמים</h4>
-                                <p style="font-size:0.9rem; margin-top:10px;">רכז רוחב: נאמן זיהומים</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
-                                <h4 style="color: var(--primary-light);">פרויקט שיפור טיפול בפצעים קשי ריפוי</h4>
-                                <p style="font-size:0.9rem; margin-top:10px;">רכז אורך: אחות אחראית פצע</p>
-                            </div>
-                        </div>
-
                         <!-- מערך אבטחת איכות והכשרות -->
                         <div class="card glass" style="margin-top: 25px;">
                             <h3>מערך אבטחת איכות, הכשרות וכשרות בבית הדר</h3>
@@ -395,6 +374,29 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="calendar-container" style="flex: 1; background: white; padding: 20px; border-radius: 12px; color: #1e293b;">
+                            <div id="fullcalendar-view"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Professionalism Tab -->
+                <section id="professionalism" class="tab-content">
+                    <div class="card glass">
+                        <h3>מקצועיות ומתן טיפול</h3>
+                        <p>הצגת פרויקטים מקומיים במחלקות לפי תחומי רכזי אורך ורוחב.</p>
+                        
+                        <div class="projects-grid" style="margin-top: 20px; display: grid; gap: 15px; grid-template-columns: 1fr 1fr;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: var(--primary-light);">פרויקט מניעת זיהומים במחלקות מונשמים</h4>
+                                <p style="font-size:0.9rem; margin-top:10px;">רכז רוחב: נאמן זיהומים</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                                <h4 style="color: var(--primary-light);">פרויקט שיפור טיפול בפצעים קשי ריפוי</h4>
+                                <p style="font-size:0.9rem; margin-top:10px;">רכז אורך: אחות אחראית פצע</p>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 

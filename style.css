@@ -479,38 +479,60 @@ p { color: #e2e8f0; line-height: 1.5; }
 /* --- Well-Being Model --- */
 .wellbeing-container {
     position: relative;
-    width: 800px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     margin: 40px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     direction: rtl;
 }
 
-.wb-ellipse {
+.wb-center {
     position: absolute;
-    width: 480px;
-    height: 680px;
-    left: 400px;
-    top: 350px;
-    transform: translate(-50%, -50%);
-    background: #0275d8;
-    border: 5px solid #5bc0de;
+    width: 150px;
+    height: 150px;
+    background: white;
     border-radius: 50%;
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.2), 0 10px 30px rgba(0,0,0,0.5);
-    z-index: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    border: 5px solid #f8fafc;
 }
 
-.wb-pie {
+.wb-ring {
     position: absolute;
-    width: 360px;
-    height: 360px;
-    left: 620px;
-    top: 350px;
-    transform: translate(-50%, -50%) rotate(45deg);
     border-radius: 50%;
-    border: 6px solid white;
+}
+
+.outer-ring {
+    width: 600px;
+    height: 600px;
+    z-index: 1;
+    background: radial-gradient(circle, #0284c7 0%, #1e3a8a 100%);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border: 6px solid #f8fafc; /* White outer border from screenshot */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-ring {
+    width: 320px;
+    height: 320px;
     z-index: 5;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    transform: rotate(45deg); /* To align quadrants to top/bottom/left/right */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: 6px solid white;
 }
 
 .wb-quad {
@@ -524,40 +546,33 @@ p { color: #e2e8f0; line-height: 1.5; }
     font-size: 1.5rem;
     color: white;
 }
-.wb-quad span {
-    transform: rotate(-45deg);
-}
-.wb-quad.q1 { top: 0; right: 0; background-color: #d97706; } /* Orange */
-.wb-quad.q2 { top: 50%; right: 0; background-color: #0275d8; } /* Blue */
-.wb-quad.q3 { top: 50%; left: 0; background-color: #00bcd4; } /* Cyan */
-.wb-quad.q4 { top: 0; left: 0; background-color: #facc15; color: #1e293b; } /* Yellow */
 
-.wb-center-node {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background: white;
-    border-radius: 50%;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1e3a8a;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    left: 480px;
-    top: 350px;
-    transform: translate(-50%, -50%);
+.wb-quad span {
+    transform: rotate(-45deg); /* Unrotate text */
 }
+
+/* 
+Quadrant Mapping after 45deg container rotation:
+q1 (Top-Right) points Right
+q2 (Bottom-Right) points Bottom
+q3 (Bottom-Left) points Left
+q4 (Top-Left) points Top
+*/
+.wb-quad.q1 { top: 0; right: 0; background-color: #eab308; color: white; } /* Right: עובדים (Yellow) */
+.wb-quad.q2 { top: 50%; right: 0; background-color: #d97706; color: white; } /* Bottom: צוותים (Orange/Brown) */
+.wb-quad.q3 { top: 50%; left: 0; background-color: #00bcd4; color: white; } /* Left: ארגון (Cyan) */
+.wb-quad.q4 { top: 0; left: 0; background-color: #0369a1; color: white; } /* Top: מנהיגים (Dark Blue) */
 
 .wb-node {
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 110px;
     height: 110px;
+    margin: -55px 0 0 -55px;
     background: white;
     border-radius: 50%;
-    border: 4px solid #facc15;
+    border: 3px solid #facc15; /* Yellow border */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -567,14 +582,17 @@ p { color: #e2e8f0; line-height: 1.5; }
     font-weight: 700;
     color: #1e3a8a;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 3;
-    transition: all 0.3s;
-    transform: translate(-50%, -50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    
+    /* Place exactly on the edge of the 600px circle (radius ~285px) */
+    transform: rotate(calc(32.727deg * var(--i) - 90deg)) translate(285px) rotate(calc(-32.727deg * var(--i) + 90deg));
 }
+
 .wb-node:hover {
-    transform: translate(-50%, -50%) scale(1.15);
-    z-index: 20;
+    transform: rotate(calc(32.727deg * var(--i) - 90deg)) translate(285px) rotate(calc(-32.727deg * var(--i) + 90deg)) scale(1.15);
     box-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
+    z-index: 20;
     border-color: #38bdf8;
     color: #0369a1;
 }
