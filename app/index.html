@@ -22,8 +22,12 @@
             </div>
             <nav>
                 <a href="#" class="nav-item active" data-tab="dashboard">
-                    <i data-lucide="bar-chart-2"></i>
-                    <span>דאשבורד מדדים ויעדים</span>
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>תמונת מצב</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="wellbeing">
+                    <i data-lucide="heart-handshake"></i>
+                    <span>רווחה ומניעת שחיקה</span>
                 </a>
                 <a href="#" class="nav-item" data-tab="core-plan">
                     <i data-lucide="target"></i>
@@ -97,6 +101,43 @@
                         <div class="card glass">
                             <h4 style="margin-bottom: 15px; text-align: center;">התקדמות קורס נאמני נושא (40 שעות)</h4>
                             <canvas id="trainingProgressChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="wellbeing" class="tab-content">
+                    <div class="card glass">
+                        <div style="text-align: center; margin-bottom: 50px;">
+                            <h2 style="color: var(--primary-light); font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">פיתוח חוסן ומניעת שחיקה</h2>
+                            <h3 style="color: #38bdf8; font-weight: 400; font-size: 1.4rem;">מודל WELL BEING של מנהל האחיות</h3>
+                        </div>
+                        
+                        <div class="wellbeing-container">
+                            <div class="wb-center">שלומות</div>
+                            
+                            <!-- Inner Ring (Quadrants) -->
+                            <div class="wb-ring inner-ring">
+                                <div class="wb-quad q1"><span>מנהיגים</span></div>
+                                <div class="wb-quad q2"><span>עובדים</span></div>
+                                <div class="wb-quad q3"><span>צוותים</span></div>
+                                <div class="wb-quad q4"><span>ארגון</span></div>
+                            </div>
+                            
+                            <!-- Outer Ring (Nodes) -->
+                            <div class="wb-ring outer-ring">
+                                <!-- 11 circles -->
+                                <div class="wb-node" style="--i: 0;"><span>אושר, הנע/אה, תקווה</span></div>
+                                <div class="wb-node" style="--i: 1;"><span>שייכות וגאוות יחידה</span></div>
+                                <div class="wb-node" style="--i: 2;"><span>משמעות בעשייה</span></div>
+                                <div class="wb-node" style="--i: 3;"><span>יעילות וגמישות בעבודה</span></div>
+                                <div class="wb-node" style="--i: 4;"><span>להיות מוערך</span></div>
+                                <div class="wb-node" style="--i: 5;"><span>פיתוח אישי, הכשרה והעשרה</span></div>
+                                <div class="wb-node" style="--i: 6;"><span>סביבת העבודה</span></div>
+                                <div class="wb-node" style="--i: 7;"><span>תהליכי עבודה</span></div>
+                                <div class="wb-node" style="--i: 8;"><span>קהילה בעבודה</span></div>
+                                <div class="wb-node" style="--i: 9;"><span>מרחב בטוח ופתוח לביטוי רגשי</span></div>
+                                <div class="wb-node" style="--i: 10;"><span>איזון בית-עבודה</span></div>
+                            </div>
                         </div>
                     </div>
                 </section>
