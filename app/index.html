@@ -112,33 +112,32 @@
                             <h3 style="color: #38bdf8; font-weight: 400; font-size: 1.4rem;">מודל WELL BEING של מנהל האחיות</h3>
                         </div>
                         
-                        <div class="wellbeing-container">
-                            <!-- Background Arrow Ring (optional visual enhancement) -->
-                            <div class="wb-ring outer-ring">
-                                <!-- 11 circles -->
-                                <div class="wb-node" style="--i: 0;"><span>אושר, הנע/אה, תקווה</span></div>
-                                <div class="wb-node" style="--i: 1;"><span>שייכות וגאוות יחידה</span></div>
-                                <div class="wb-node" style="--i: 2;"><span>משמעות בעשייה</span></div>
-                                <div class="wb-node" style="--i: 3;"><span>יעילות וגמישות בעבודה</span></div>
-                                <div class="wb-node" style="--i: 4;"><span>להיות מוערך</span></div>
-                                <div class="wb-node" style="--i: 5;"><span>פיתוח אישי, הכשרה והעשרה</span></div>
-                                <div class="wb-node" style="--i: 6;"><span>סביבת העבודה</span></div>
-                                <div class="wb-node" style="--i: 7;"><span>תהליכי עבודה</span></div>
-                                <div class="wb-node" style="--i: 8;"><span>קהילה בעבודה</span></div>
-                                <div class="wb-node" style="--i: 9;"><span>מרחב בטוח ופתוח לביטוי רגשי</span></div>
-                                <div class="wb-node" style="--i: 10;"><span>איזון בית-עבודה</span></div>
+                        <div class="wellbeing-image-container" style="text-align: center; border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 20px; background: rgba(0,0,0,0.2);">
+                            <img id="wellbeing-img-preview" src="#" alt="מודל שלומות" style="display:none; max-width: 100%; max-height: 500px; border-radius: 12px; margin: 0 auto; margin-bottom: 20px;">
+                            
+                            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                                <button class="btn btn-outline" style="border-color: rgba(56,189,248,0.5); color: #38bdf8;" onclick="document.getElementById('wb-model-upload').click()">
+                                    <i data-lucide="image" style="width: 18px; height: 18px; margin-left: 8px;"></i> בחר/י תמונת מודל...
+                                </button>
+                                <input type="file" id="wb-model-upload" accept="image/*" style="display:none;" onchange="previewWBModel(this)">
+                            </div>
+                        </div>
+
+                        <div class="wellbeing-gallery" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                            <h3 style="color: #10b981; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                                <i data-lucide="camera"></i> תמונות ומסמכים של עשייה בנידון
+                            </h3>
+                            
+                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                <button class="btn btn-primary" onclick="document.getElementById('wb-gallery-upload').click()">
+                                    <i data-lucide="plus" style="width: 18px; height: 18px; margin-left: 8px;"></i> הוסף תמונות / מסמכים
+                                </button>
+                                <input type="file" id="wb-gallery-upload" multiple accept="image/*,.pdf,.doc,.docx" style="display:none;" onchange="addToWBGallery(this)">
                             </div>
 
-                            <!-- Inner Ring (Quadrants) -->
-                            <div class="wb-ring inner-ring">
-                                <div class="wb-quad q1"><span>עובדים</span></div> <!-- Right -->
-                                <div class="wb-quad q2"><span>צוותים</span></div> <!-- Bottom -->
-                                <div class="wb-quad q3"><span>ארגון</span></div> <!-- Left -->
-                                <div class="wb-quad q4"><span>מנהיגים</span></div> <!-- Top -->
+                            <div id="wb-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+                                <!-- uploaded images/docs will appear here -->
                             </div>
-                            
-                            <!-- Center -->
-                            <div class="wb-center">שלומות</div>
                         </div>
                     </div>
                 </section>
@@ -800,6 +799,84 @@
             tr.innerHTML += '<td contenteditable="true" style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); vertical-align: top; background: rgba(0,0,0,0.2); min-height: 40px;"></td>';
         }
         tbody.appendChild(tr);
+    }
+
+    function previewWBModel(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('wellbeing-img-preview').src = e.target.result;
+                document.getElementById('wellbeing-img-preview').style.display = 'block';
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function addToWBGallery(input) {
+        if (input.files) {
+            const grid = document.getElementById('wb-gallery-grid');
+            for (let i = 0; i < input.files.length; i++) {
+                const file = input.files[i];
+                const isImage = file.type.startsWith('image/');
+                
+                const card = document.createElement('div');
+                card.className = 'card glass';
+                card.style.padding = '10px';
+                card.style.textAlign = 'center';
+                card.style.position = 'relative';
+                card.style.display = 'flex';
+                card.style.flexDirection = 'column';
+                card.style.alignItems = 'center';
+
+                const deleteBtn = document.createElement('span');
+                deleteBtn.innerHTML = '&times;';
+                deleteBtn.style.position = 'absolute';
+                deleteBtn.style.top = '5px';
+                deleteBtn.style.right = '5px';
+                deleteBtn.style.background = 'rgba(239, 68, 68, 0.8)';
+                deleteBtn.style.color = 'white';
+                deleteBtn.style.borderRadius = '50%';
+                deleteBtn.style.width = '24px';
+                deleteBtn.style.height = '24px';
+                deleteBtn.style.lineHeight = '24px';
+                deleteBtn.style.cursor = 'pointer';
+                deleteBtn.onclick = function() { card.remove(); };
+                card.appendChild(deleteBtn);
+
+                if (isImage) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.maxWidth = '100%';
+                        img.style.height = '120px';
+                        img.style.objectFit = 'cover';
+                        img.style.borderRadius = '8px';
+                        img.style.marginBottom = '10px';
+                        img.style.marginTop = '15px';
+                        card.insertBefore(img, deleteBtn.nextSibling);
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    const docIcon = document.createElement('div');
+                    docIcon.innerHTML = '<i data-lucide="file-text" style="width: 48px; height: 48px; color: #3b82f6; margin: 20px 0;"></i>';
+                    card.insertBefore(docIcon, deleteBtn.nextSibling);
+                }
+
+                const title = document.createElement('div');
+                title.style.fontSize = '0.9rem';
+                title.style.color = '#cbd5e1';
+                title.style.wordBreak = 'break-word';
+                title.style.marginTop = 'auto';
+                title.innerText = file.name;
+                card.appendChild(title);
+
+                grid.appendChild(card);
+            }
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        }
     }
 </script>
 </body>
