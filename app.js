@@ -176,20 +176,23 @@ window.renderStaffTable = function() {
 
 // --- Departments & Trustees Logic ---
 const clinicalTopics = [
-    "טיפול בפצעים",
-    "בטיחות הטיפול וניהול סיכונים",
-    "טיפול בכאב",
-    "טיפול פליאטיבי",
-    "מניעת התעמרות",
-    "זכויות המטופל",
-    "נגישות",
-    "שיפור חווית המטופל",
-    "מניעת זיהומים",
-    "בריאות העובד",
-    "שימוש מושכל בתרופות",
-    "החייאה",
-    "דפוסי הפרשות",
-    "הזנה והאכלה"
+    { name: "פצעים", icon: "bandage" },
+    { name: "כאב", icon: "activity" },
+    { name: "הזנה והאכלה", icon: "apple" },
+    { name: "דמנציה", icon: "brain" },
+    { name: "טיפול תומך/פליאטיבי", icon: "heart-pulse" },
+    { name: "מניעת זיהומים", icon: "shield-alert" },
+    { name: "בטיחות הטיפול וניהול סיכונים", icon: "shield-check" },
+    { name: "התעמרות וחוק זכויות המטופל", icon: "user-check" },
+    { name: "סוכרת", icon: "stethoscope" },
+    { name: "אי ספיקת לב", icon: "heart" },
+    { name: "טראומה", icon: "alert-triangle" },
+    { name: "גריאטריה", icon: "users" },
+    { name: "חרום", icon: "siren" },
+    { name: "טיפול תרופתי", icon: "pill" },
+    { name: "החייאה", icon: "zap" },
+    { name: "חווית המטופל", icon: "smile" },
+    { name: "בריאות העובד ומערך החיסונים", icon: "syringe" }
 ];
 
 let departments = JSON.parse(localStorage.getItem('departments')) || ["מחלקה א'", "מחלקה ב'"];
@@ -231,15 +234,11 @@ window.renderTrustees = function() {
     if (!trusteeData[selectedDept]) trusteeData[selectedDept] = {};
 
     list.innerHTML = '';
-    clinicalTopics.forEach(topic => {
+    clinicalTopics.forEach(topicObj => {
+        const topic = topicObj.name;
+        const icon = topicObj.icon;
         const val = trusteeData[selectedDept][topic] || '';
         list.innerHTML += `
-            <li style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start; padding: 10px; background: rgba(255,255,255,0.02); border-radius: 6px; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-                    <span style="font-weight: 500;">נאמן ${topic}</span>
-                    <button class="btn btn-sm"><i data-lucide="upload"></i> כתב מינוי</button>
-                </div>
-                <div style="display: flex; width: 100%; gap: 10px;">
                     <input type="text" placeholder="שם הנאמן במחלקה" value="${val}" 
                            onblur="updateTrustee('${selectedDept}', '${topic}', this.value)"
                            style="flex: 1; padding: 6px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.4); color: #fff; font-family: inherit;">
