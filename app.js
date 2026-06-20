@@ -398,6 +398,25 @@ window.addOrgNode = function(parentId) {
     });
 }
 
+window.addOrgSibling = function(id) {
+    if(id === 'root') {
+        alert('לא ניתן להוסיף מקביל לקודקוד הראשי.');
+        return;
+    }
+    findNodeAndDo(orgChartData, id, (node, parent) => {
+        if(parent) {
+            parent.children.push({
+                id: generateId(),
+                role: 'תפקיד רוחבי',
+                name: 'שם העובד',
+                children: []
+            });
+            saveOrgChart();
+            renderOrgChart();
+        }
+    });
+}
+
 window.deleteOrgNode = function(id) {
     if(id === 'root') {
         alert('לא ניתן למחוק את קודקוד העץ הראשי.');
@@ -425,7 +444,8 @@ function buildTreeHTML(node) {
     let html = `<li>
         <div class="node-box">
             <div class="node-actions">
-                <button class="node-btn add" onclick="addOrgNode('${node.id}')" title="הוסף כפיף"><i data-lucide="plus" style="width:14px; height:14px;"></i></button>
+                <button class="node-btn add" onclick="addOrgNode('${node.id}')" title="הוסף כפוף"><i data-lucide="arrow-down-to-line" style="width:14px; height:14px;"></i></button>
+                ${node.id !== 'root' ? `<button class="node-btn add-sibling" onclick="addOrgSibling('${node.id}')" title="הוסף רוחבי"><i data-lucide="arrow-right-left" style="width:14px; height:14px;"></i></button>` : ''}
                 <button class="node-btn delete" onclick="deleteOrgNode('${node.id}')" title="מחק"><i data-lucide="trash-2" style="width:14px; height:14px;"></i></button>
             </div>
             <span class="node-role" contenteditable="true" onblur="updateOrgNode('${node.id}', 'role', this.innerText)">${node.role}</span>

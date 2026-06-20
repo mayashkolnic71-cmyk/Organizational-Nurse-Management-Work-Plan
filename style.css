@@ -258,53 +258,52 @@ p { color: #e2e8f0; line-height: 1.5; }
     display: flex;
     justify-content: center;
     padding: 20px;
+    direction: rtl; 
 }
 .org-tree * { margin: 0; padding: 0; box-sizing: border-box; }
 .org-tree ul {
-    padding-top: 20px; position: relative;
+    padding-top: 20px; 
+    position: relative;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
+.org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 2px; height: 20px;
+    background-color: var(--primary);
+    transform: translateX(-50%);
+}
+.org-tree > ul::before { display: none; }
 .org-tree li {
-    text-align: center;
-    list-style-type: none;
     position: relative;
     padding: 20px 10px 0 10px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.org-tree li::before, .org-tree li::after{
+.org-tree li::before {
     content: '';
-    position: absolute; top: 0; right: 50%;
-    border-top: 2px solid var(--primary);
-    width: 50%; height: 20px;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background-color: var(--primary);
 }
-.org-tree li::after{
-    right: auto; left: 50%;
-    border-left: 2px solid var(--primary);
-}
-.org-tree li:only-child::after, .org-tree li:only-child::before {
-    display: none;
-}
-.org-tree li:only-child{ padding-top: 0;}
-.org-tree li:first-child::before, .org-tree li:last-child::after{
-    border: 0 none;
-}
-.org-tree li:last-child::before{
-    border-right: 2px solid var(--primary);
-    border-radius: 0 5px 0 0;
-}
-.org-tree li:first-child::after{
-    border-radius: 5px 0 0 0;
-}
-.org-tree ul ul::before{
+.org-tree li::after {
     content: '';
-    position: absolute; top: 0; left: 50%;
-    border-left: 2px solid var(--primary);
-    width: 0; height: 20px;
+    position: absolute;
+    top: 0; left: 50%;
+    width: 2px; height: 20px;
+    background-color: var(--primary);
     transform: translateX(-50%);
 }
+.org-tree li:first-child::before { width: 50%; left: 0; }
+.org-tree li:last-child::before { width: 50%; right: 0; left: auto; }
+.org-tree li:only-child::before { display: none; }
+
 .org-tree li div.node-box {
     border: 1px solid rgba(255,255,255,0.2);
     padding: 15px 10px;
@@ -368,6 +367,7 @@ p { color: #e2e8f0; line-height: 1.5; }
 }
 .node-btn:hover { background: rgba(255,255,255,0.15); }
 .node-btn.add { color: #10b981; }
+.node-btn.add-sibling { color: #3b82f6; }
 .node-btn.delete { color: #ef4444; }
 
 /* Custom scrollbar */
