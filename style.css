@@ -700,13 +700,13 @@ q4 (Top-Left) points Top
     .tab-content {
         display: none !important;
     }
-    #training-calendar {
+    #org-structure {
         display: block !important;
     }
-    #training-calendar > div {
+    #org-structure > div {
         display: none !important;
     }
-    #training-calendar .trustees-section {
+    #org-structure .trustees-section {
         display: block !important;
         position: absolute;
         top: 0;
@@ -753,6 +753,9 @@ q4 (Top-Left) points Top
         color: black !important;
     }
     .editable-text:empty:before {
+        display: none !important;
+    }
+    .tc-action {
         display: none !important;
     }
 }
