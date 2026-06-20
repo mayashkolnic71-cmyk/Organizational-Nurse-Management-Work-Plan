@@ -147,8 +147,23 @@
                     <div class="card glass">
                         <h3>תכנית ליבה ותוכנית עבודה שנתית</h3>
                         <p>כאן תוצג אסטרטגיית הניהול של האחיות בארגון ויעדי הליבה לשנה הקרובה, מותאם לחזון הארגוני ויעדי משרד הבריאות.</p>
+                        
                         <div class="content-placeholder" style="margin-top:20px; padding:20px; background:rgba(255,255,255,0.05); border-radius:8px;">
                             הגדרת היעדים השנתיים (מבוסס מכרז קודים)...
+                        </div>
+
+                        <h4 style="color: #38bdf8; margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">תוכניות עבודה קליניות</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('פצעים')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> פצעים</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('כאב')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> כאב</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('החייאה')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> החייאה</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('מניעת זיהומים')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> מניעת זיהומים</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('בטיחות הטיפול')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> בטיחות הטיפול</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('אי ספיקת לב')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> אי ספיקת לב</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('פליאטיב')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> פליאטיב</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('טראומה')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> טראומה</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('סוכרת')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> סוכרת</button>
+                            <button class="btn btn-outline" style="justify-content: center; border-color: rgba(56,189,248,0.3);" onclick="openWorkPlan('גריאטריה')"><i data-lucide="file-text" style="width: 16px; margin-left: 8px;"></i> גריאטריה</button>
                         </div>
                     </div>
                 </section>
@@ -178,12 +193,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -202,12 +214,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -226,12 +235,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -250,12 +256,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -274,12 +277,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -298,12 +298,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -322,12 +319,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -346,12 +340,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -370,12 +361,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -394,12 +382,9 @@
                                             <label>מחלקה:</label>
                                             <div class="editable-text" contenteditable="true" data-placeholder="הקלד/י מחלקה..."></div>
                                         </div>
-                                        <div class="tc-action" style="margin-top: 5px; display: flex; gap: 10px;">
-                                            <button class="btn btn-sm btn-outline" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
-                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> מינוי
-                                            </button>
-                                            <button class="btn btn-sm btn-primary" style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;" onclick="openWorkPlan(this)">
-                                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> תוכנית
+                                        <div class="tc-action" style="margin-top: 5px;">
+                                            <button class="btn btn-sm btn-outline" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; border-color: rgba(255,255,255,0.2); color: #cbd5e1; background: rgba(0,0,0,0.2); transition: all 0.2s;" onclick="alert('במערכת אמיתית, יפתח חלון לבחירת קובץ כתב מינוי')">
+                                                <i data-lucide="upload" style="width: 14px; height: 14px;"></i> כתב מינוי
                                             </button>
                                         </div>
                                     </div>
@@ -784,9 +769,14 @@
 </div>
 
 <script>
-    function openWorkPlan(btn) {
-        const card = btn.closest('.trustee-card');
-        const headerText = card.querySelector('.tc-header').textContent.trim();
+    function openWorkPlan(subjectOrBtn) {
+        let headerText = '';
+        if (typeof subjectOrBtn === 'string') {
+            headerText = subjectOrBtn;
+        } else {
+            const card = subjectOrBtn.closest('.trustee-card');
+            headerText = card.querySelector('.tc-header').textContent.trim();
+        }
         document.getElementById('wp-subject-name').innerText = headerText;
         document.getElementById('work-plan-modal').style.display = 'block';
         document.body.classList.add('has-modal');
