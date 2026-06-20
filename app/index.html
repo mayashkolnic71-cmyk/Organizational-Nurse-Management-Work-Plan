@@ -192,7 +192,42 @@
                         </div>
                     </div>
 
-                        <div class="card glass trustees-section" style="margin-top: 25px;">
+                        <div class="card glass" style="margin-bottom: 20px;">
+                        <h3>פיתוח עתודה ניהולית ומנהיגות</h3>
+                        <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב צוות האחיות, ריכוז אחריות משמרת ואחיות בכירות.</p>
+                    </div>
+
+
+                    <div class="card glass" style="margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="margin: 0;">תמהיל כוח אדם</h3>
+                            <div style="display: flex; gap: 8px;">
+                                <input type="number" id="new-year-input" placeholder="שנה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 100px; font-family: inherit;">
+                                <button class="btn btn-sm btn-primary" onclick="addYearColumn()">הוסף שנה</button>
+                            </div>
+                        </div>
+                        <p style="margin-bottom:15px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התאים הרלוונטיים בכדי לערוך את הכמות בפועל ואת הבסיס (N). המערכת תחשב את האחוז אוטומטית. ניתן גם לערוך את היעד הפנימי.</p>
+                        <div class="table-responsive" id="mix-table-container">
+                            <!-- Rendered via JS -->
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="card glass">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0;">ריכוז אחריות משמרת</h3>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="new-dept-input" placeholder="שם מחלקה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 140px; font-family: inherit;">
+                                    <button class="btn btn-sm btn-primary" onclick="addDepartment()">הוסף</button>
+                                </div>
+                            </div>
+                            <ul class="task-list" id="shift-managers" style="max-height: 300px; overflow-y: auto; padding-left: 5px;">
+                                <!-- Rendered via JS -->
+                            </ul>
+                        </div>
+
+                    </div>
+                <div class="card glass trustees-section" style="margin-top: 25px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
                                 <h3>מערך נאמני נושא קליניים ומינויים</h3>
                                 <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
@@ -569,42 +604,7 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="card glass" style="margin-bottom: 20px;">
-                        <h3>פיתוח עתודה ניהולית ומנהיגות</h3>
-                        <p>ניהול ומעקב אחר פיתוח המנהיגות בקרב צוות האחיות, ריכוז אחריות משמרת ואחיות בכירות.</p>
-                    </div>
-
-
-                    <div class="card glass" style="margin-bottom: 20px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-                            <h3 style="margin: 0;">תמהיל כוח אדם</h3>
-                            <div style="display: flex; gap: 8px;">
-                                <input type="number" id="new-year-input" placeholder="שנה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 100px; font-family: inherit;">
-                                <button class="btn btn-sm btn-primary" onclick="addYearColumn()">הוסף שנה</button>
-                            </div>
-                        </div>
-                        <p style="margin-bottom:15px; font-size: 0.9rem; color:#cbd5e1;">לחץ על התאים הרלוונטיים בכדי לערוך את הכמות בפועל ואת הבסיס (N). המערכת תחשב את האחוז אוטומטית. ניתן גם לערוך את היעד הפנימי.</p>
-                        <div class="table-responsive" id="mix-table-container">
-                            <!-- Rendered via JS -->
-                        </div>
-                    </div>
-
-                    <div class="stats-grid">
-                        <div class="card glass">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-                                <h3 style="margin: 0;">ריכוז אחריות משמרת</h3>
-                                <div style="display: flex; gap: 8px;">
-                                    <input type="text" id="new-dept-input" placeholder="שם מחלקה חדשה" style="padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,23,42,0.5); color: #fff; width: 140px; font-family: inherit;">
-                                    <button class="btn btn-sm btn-primary" onclick="addDepartment()">הוסף</button>
-                                </div>
-                            </div>
-                            <ul class="task-list" id="shift-managers" style="max-height: 300px; overflow-y: auto; padding-left: 5px;">
-                                <!-- Rendered via JS -->
-                            </ul>
-                        </div>
-
-                    </div>
-                </section>
+                    </section>
 
                 <!-- 3. Training & Competency Tab -->
                 <section id="training-calendar" class="tab-content">
@@ -937,6 +937,134 @@
                 </tbody>
             </table>
             <button onclick="addWpRow()" class="btn btn-sm btn-outline print-btn" style="margin-top: 15px;"><i data-lucide="plus" style="width: 14px; height: 14px;"></i> הוסף שורה נוספת</button>
+
+            <!-- Ongoing Activities Section -->
+            <div class="wp-ongoing-activities" style="margin-top: 40px; border-top: 2px dashed rgba(56,189,248,0.3); padding-top: 20px;">
+                <h3 style="color: #38bdf8; margin-bottom: 5px; text-align: center;">תוכנית עבודה בנושא- <span class="wp-subject-name-dynamic"></span> לשנת - <span contenteditable="true" style="display:inline-block; min-width:50px; border-bottom:1px solid #ccc; outline:none;"></span></h3>
+                <h4 style="text-align: center; margin-top: 0; color: #cbd5e1; margin-bottom: 20px;">פעולות הטמעה ושימור שוטף</h4>
+                
+                <div style="color: #60a5fa; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; text-align: right; line-height: 1.6;">
+                    <div>הסבר מילוי ובניית תוכנית עבודה נמצא בסוף גיליון זה</div>
+                    <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום</div>
+                    <div>תוכנית עבודה תבנה לשנתיים בתיאום עם רכז/ת תחום בבית הדר</div>
+                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו גם במקרה של תוכנית רב שנתית</div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <!-- Table 1 -->
+                    <div>
+                        <h4 style="background: rgba(56,189,248,0.1); padding: 8px; margin: 0; border: 1px solid rgba(255,255,255,0.2); border-bottom: none;">עדכון נהלים והנחיות מקצועיות</h4>
+                        <table style="width: 100%; border-collapse: collapse; text-align: right;">
+                            <thead>
+                                <tr style="background: rgba(56,189,248,0.05);">
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); width: 30%;">תאריך עדכון</th>
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">שם הנוהל / אומדן / הנחיות מקצועיות</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-sm btn-outline print-btn" style="margin-top: 5px; font-size: 0.8rem; padding: 2px 8px;" onclick="addSimpleRow(this)">+ שורה</button>
+                    </div>
+
+                    <!-- Table 2 -->
+                    <div>
+                        <h4 style="background: rgba(56,189,248,0.1); padding: 8px; margin: 0; border: 1px solid rgba(255,255,255,0.2); border-bottom: none;">פעילות צוות עבודה (ישיבות, סדנאות, דיונים)</h4>
+                        <table style="width: 100%; border-collapse: collapse; text-align: right;">
+                            <thead>
+                                <tr style="background: rgba(56,189,248,0.05);">
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); width: 30%;">תאריך</th>
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">נושא</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-sm btn-outline print-btn" style="margin-top: 5px; font-size: 0.8rem; padding: 2px 8px;" onclick="addSimpleRow(this)">+ שורה</button>
+                    </div>
+
+                    <!-- Table 3 -->
+                    <div>
+                        <h4 style="background: rgba(56,189,248,0.1); padding: 8px; margin: 0; border: 1px solid rgba(255,255,255,0.2); border-bottom: none;">הדרכות צוות / הכשרות / השתלמויות</h4>
+                        <table style="width: 100%; border-collapse: collapse; text-align: right;">
+                            <thead>
+                                <tr style="background: rgba(56,189,248,0.05);">
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); width: 30%;">תאריך</th>
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">נושא</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-sm btn-outline print-btn" style="margin-top: 5px; font-size: 0.8rem; padding: 2px 8px;" onclick="addSimpleRow(this)">+ שורה</button>
+                    </div>
+
+                    <!-- Table 4 -->
+                    <div>
+                        <h4 style="background: rgba(56,189,248,0.1); padding: 8px; margin: 0; border: 1px solid rgba(255,255,255,0.2); border-bottom: none;">בקרות</h4>
+                        <table style="width: 100%; border-collapse: collapse; text-align: right;">
+                            <thead>
+                                <tr style="background: rgba(56,189,248,0.05);">
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); width: 30%;">תאריך</th>
+                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">נושא</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                    <td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-sm btn-outline print-btn" style="margin-top: 5px; font-size: 0.8rem; padding: 2px 8px;" onclick="addSimpleRow(this)">+ שורה</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

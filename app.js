@@ -722,3 +722,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function addSimpleRow(btn) {
+    const tbody = btn.previousElementSibling.querySelector('tbody');
+    const tr = document.createElement('tr');
+    for(let i=0; i<2; i++) {
+        tr.innerHTML += '<td contenteditable="true" style="padding: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); min-height: 30px;"></td>';
+    }
+    tbody.appendChild(tr);
+}
