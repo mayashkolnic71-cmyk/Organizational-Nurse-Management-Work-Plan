@@ -823,50 +823,86 @@
                         <p style="margin-bottom:20px;">מאגר טפסים ומסמכי רגולציה נדרשים לניהול הדרכות ומשמרות.</p>
                         
                         <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <!-- Clinical Instructor Form -->
                             <div class="file-item">
-                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <i data-lucide="award" style="color:#ef4444;"></i>
                                 <div style="flex:1;">
-                                    <h4>טופס כתב מינוי לנאמן נושא</h4>
-                                    <span style="font-size:0.8rem; color:#cbd5e1;">תבנית למילוי וחתימה</span>
+                                    <h4>כתב מינוי למדריך קליני</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 5 - תעודת כתב מינוי מעוצבת</span>
                                 </div>
-                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('clinical-instructor-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
                             </div>
 
+                            <!-- Shift Manager Form -->
                             <div class="file-item">
-                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <i data-lucide="clipboard-check" style="color:#f59e0b;"></i>
                                 <div style="flex:1;">
-                                    <h4>טופס אחריות משמרת</h4>
-                                    <span style="font-size:0.8rem; color:#cbd5e1;">מסמך האצלת סמכויות לאחות אחראית משמרת</span>
+                                    <h4>טופס מינוי וחידוש אחראיות משמרת</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 6 - הערכה לכתב מינוי וחידוש אחריות משמרת</span>
                                 </div>
-                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('shift-manager-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
                             </div>
 
+                            <!-- Topic Trustee Form -->
                             <div class="file-item">
-                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <i data-lucide="user-check" style="color:#3b82f6;"></i>
                                 <div style="flex:1;">
-                                    <h4>טופס החתמת נוכחות בהדרכה</h4>
-                                    <span style="font-size:0.8rem; color:#cbd5e1;">טופס חובה לכל ישיבה מחלקתית / ועדת היגוי</span>
+                                    <h4>כתב מינוי לתפקיד רכז/נאמן תחום</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 6 - מינוי ודרישות תפקיד לנאמן מחלקה</span>
                                 </div>
-                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('topic-trustee-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
                             </div>
 
+                            <!-- Exceptional Operations RN Form -->
                             <div class="file-item">
-                                <i data-lucide="file-text" style="color:var(--primary-light);"></i>
+                                <i data-lucide="file-signature" style="color:#8b5cf6;"></i>
                                 <div style="flex:1;">
-                                    <h4>טופס פורמט מובנה לפרוטוקול ועדה</h4>
-                                    <span style="font-size:0.8rem; color:#cbd5e1;">סיכום ישיבת ועדה, החלטות ומעקב ביצוע</span>
+                                    <h4>הרשאה לפעולות חריגות - אחות מוסמכת</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 3 - טופס הרשאה אישית</span>
                                 </div>
-                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('auth-rn-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
                             </div>
 
+                            <!-- Exceptional Operations PN Form -->
                             <div class="file-item">
-                                <i data-lucide="file-text" style="color:var(--danger);"></i>
+                                <i data-lucide="file-signature" style="color:#ec4899;"></i>
                                 <div style="flex:1;">
-                                    <h4>מכרז הקודים המקורי (משרד הבריאות)</h4>
-                                    <span style="font-size:0.8rem; color:#cbd5e1;">דרישות הרגולציה מ-2024 והלאה (15 נק' הדרכות)</span>
+                                    <h4>הרשאה לפעולה חריגה - אחות מעשית</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 4 - טופס הרשאה אישית</span>
                                 </div>
-                                <button class="btn btn-sm">הורדה <i data-lucide="download" style="width:14px; height:14px;"></i></button>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('auth-pn-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
                             </div>
+
+                            <!-- Clinical Specialist Form -->
+                            <div class="file-item">
+                                <i data-lucide="stethoscope" style="color:#10b981;"></i>
+                                <div style="flex:1;">
+                                    <h4>הרשאה למומחית קלינית בסיעודי גריאטרי</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 7 - טופס הרשאה אישית</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('specialist-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <!-- Deputy Head Nurse Form -->
+                            <div class="file-item">
+                                <i data-lucide="shield" style="color:#f43f5e;"></i>
+                                <div style="flex:1;">
+                                    <h4>כתב מינוי סגן/נית אח/ות אחראי/ת</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">נספח 8 - מינוי לסגן מנהל מחלקה</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('deputy-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
+                            </div>
+
+                            <!-- Staff Meeting Form -->
+                            <div class="file-item">
+                                <i data-lucide="users" style="color:#14b8a6;"></i>
+                                <div style="flex:1;">
+                                    <h4>פורמט ישיבת צוות מחלקתית</h4>
+                                    <span style="font-size:0.8rem; color:#cbd5e1;">תיעוד ישיבות צוות, נושאים והחלטות</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary" onclick="openFormModal('staff-meeting-modal')">מילוי והדפסה <i data-lucide="edit-3" style="width:14px; height:14px;"></i></button>
+                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -944,7 +980,11 @@
                 <h4 style="text-align: center; margin-top: 0; color: #cbd5e1; margin-bottom: 20px;">פעולות הטמעה ושימור שוטף</h4>
                 
                 <div style="color: #60a5fa; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; text-align: right; line-height: 1.6;">
-                    <div>הסבר מילוי ובניית תוכנית עבודה נמצא בסוף גיליון זה</div>
+                    <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום בסיום התוכנית .תוכנית עבודה תבנה לשנה /שנתיים ויותר בתיאום עם רכז/ת חת"ש.</div>
+                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו תוך אפשרות לשליפת ההדרכות /ההכשרות ועוד מלוח השנה.</div>
+                    <div>פרוטוקולים של הדרכות ודפי נוכחות יש לאפשר לצרף ללוח השנה.</div>
+
+                </div>
                     <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום</div>
                     <div>תוכנית עבודה תבנה לשנתיים בתיאום עם רכז/ת תחום בבית הדר</div>
                     <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו גם אם במקרה של תוכנית רב שנתית</div>
@@ -1738,5 +1778,173 @@
         </div>
     </div>
 </div>
+
+<!-- Appendix 7 Specialist Form -->
+<div id="specialist-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('specialist-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס טופס
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; font-size: 14px; line-height: 1.6;">
+            <div style="text-align: left; font-weight: bold; margin-bottom: 20px; text-decoration: underline;">נספח מס' 7</div>
+            
+            <h2 style="text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px;">טופס הרשאה אישית למומחית קלינית בסיעודי גריאטרי / טיפול תומך</h2>
+            
+            <p style="margin-bottom: 15px;">על מנת לאפשר לאחות המומחית למלא את תפקידה, מתקיים הליך של הכרה בסמכויות ייחודיות אשר מוגדרות לכל תחום מומחיות. הסמכויות מואצלות על פי חוק ובאישור המנכ"ל, כאמור, לפי סעיף 59א לפקודת הרופאים.</p>
+            
+            <p style="margin-bottom: 30px;">בתוקף סמכותי לפי חוזרים לתת השארה אישית, אני מרשה</p>
+            
+            <div style="margin-bottom: 10px; display: flex; align-items: center;">
+                <span style="width: 80px;">למר/גב'</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+                <span style="width: 40px; text-align: center;">ת.ז.</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="text-align: center; font-size: 12px; margin-bottom: 20px;">(שם מבצע)</div>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold;">אחות מומחית קלינית בסיעודי גריאטרי / טיפול תומך</span> מס' רישום <input type="text" style="width: 150px; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold;">בעלת הכשרה מוכרת ב : מומחית קלינית בסיעודי גריאטרי / טיפול תומך</span>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold;">מספר רישום מומחה:</span> <input type="text" style="width: 150px; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת <span style="text-decoration: underline;">במרכז רפואה סיעוד ושיקום "בית הדר"</span> (ראה פירוט בהמשך הדף של עיקרי תפקיד בתחום גריאטרי/טיפול תומך)
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                ובמסגרת עבודה זו בלבד <span style="font-weight: bold;">במחלקה</span> : <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold;">תוקף מ</span> <input type="text" style="width: 150px; border:none; border-bottom:1px solid #000;"> <span style="font-weight: bold;">עד</span> <input type="text" style="width: 150px; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold;">שם וחתימה של מנהל המחלקה/מרפאה: מס' רישיון:</span> <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 20px; clear: both;">
+                <span style="font-weight: bold;">שם וחתימה של מנהל הרפואי: מס' רישיון:</span> <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 40px; clear: both;">
+                <span style="font-weight: bold;">שם חתימה של המנהלת סיעוד: מספר רישיון:</span> <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            
+            <div style="clear: both; margin-top: 50px;">
+                <div style="font-weight: bold; text-decoration: underline; margin-bottom: 10px;">סימוכין :</div>
+                <ol style="margin-right: 20px; padding-right: 20px; color: blue;">
+                    <li><a href="#" style="color: blue; text-decoration: underline;">חוזר מנהל הסיעוד מומחיות בסיעוד, 2013.</a></li>
+                    <li><a href="#" style="color: blue; text-decoration: underline;">חוזר המנהל הכללי, אחות מומחית במערך האשפוז והקהילה, 2015.</a></li>
+                    <li style="color: black;">חוזר מנהל הרפואי נהלי עבודה לאחות מומחית בסיעוד גריאטרי במערך האשפוז הגריאטרית, 2014.</li>
+                    <li><a href="#" style="color: blue; text-decoration: underline;">חוזר חטיבת הרפואה, נהלי עבודת אחות מומחית לסיעוד גריאטרי במערך האשפוז הכללי, 2020.</a></li>
+                    <li style="color: black;">חוזר מנהל הסיעוד , פעולות סיעוד בטיפול תומך, 2011.</li>
+                    <li><a href="#" style="color: blue; text-decoration: underline;">חוזר חטיבת הרפואה, נהלי עבודת אחות מומחית לסיעוד גריאטריה בקהילה, 2021.</a></li>
+                    <li style="color: black;">מתן מרשם בידי אח או אחות מוסמכים, חוזר מנהל כללי, 2010.</li>
+                    <li>חוזר מנהל הסיעוד מס 79/2009 בנושא " אחות מומחית בטיפול תומך" <a href="#" style="color: blue; text-decoration: underline;">חוזר מנהל הסיעוד 79/2009.</a></li>
+                    <li style="color: black;">חוזר מנהל הסיעוד מס' 88/2011 בנושא "אחות מומחית בטיפול תומך".</li>
+                </ol>
+            </div>
+            
+            <!-- Page break for table (omitted full massive table for brevity, but we include a placeholder that represents the structure) -->
+            <div style="page-break-before: always; margin-top: 40px;">
+                <h3 style="text-align: center; font-weight: bold; margin-bottom: 20px;">עיקרי תיאור תפקיד מומחית בתחום גריאטרי :</h3>
+                <p style="text-align: center; color: #666; font-style: italic;">(הטבלה המלאה של הרשאות הטיפול וסמכויות קליניות מפורטת בנספח המקורי)</p>
+                <div style="border: 1px solid #000; padding: 20px; text-align: center; background: #f9fafb; margin-bottom: 20px;">
+                    <strong>טבלת הרשאות לניהול טיפול (Constipation, Acute urinary retention, Pharmacologic management of ACUTE/chronic pain, Diagnosis of delirium, FALLS, etc.)</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Appendix 8 Deputy Modal -->
+<div id="deputy-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('deputy-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס טופס
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; font-size: 15px; line-height: 1.6;">
+            <!-- Page 1 -->
+            <div style="min-height: 1000px; position: relative;">
+                <div style="text-align: left; font-weight: bold; margin-bottom: 20px; font-size: 16px;">נספח מס' 8 כתב מינוי לתפקיד סגן/נית אח/ות אחראי/ת</div>
+                
+                <div style="text-align: left; font-weight: bold; margin-bottom: 50px;">
+                    תאריך המינוי : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px; font-size: 16px;">
+                </div>
+                
+                <div style="font-weight: bold; text-decoration: underline; margin-bottom: 20px; font-size: 18px;">לכבוד:</div>
+                <div style="margin-bottom: 10px; font-size: 16px;">
+                    שם האחות : <input type="text" style="border:none; border-bottom:1px solid #000; width: 300px;">
+                </div>
+                <div style="margin-bottom: 50px; font-size: 16px;">
+                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד בית הדר (מרי"ג).
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 30px; font-size: 16px;">שלום רב,</div>
+                
+                <div style="text-align: center; font-weight: bold; margin-bottom: 40px; font-size: 18px;">
+                    <span style="text-decoration: underline;">הנדון:</span> מינוי לתפקיד סגן/נית אח/ות אחראי/ת במחלקה <input type="text" style="border:none; border-bottom:1px dashed #000; width:200px; text-align:center; font-weight:bold; font-size:18px;"><br>
+                    ב "בית הדר - מרכז רפואה שיקום וסיעוד".
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 40px; font-size: 16px;">
+                    בזה אנו ממנים אותך לתפקיד סגן/נית אח/ות אחראי/ת מתאריך <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px; text-align:center;"><br>
+                    וזאת בהתאם לדרישות התפקיד והמטלות הנדרשות.<br>
+                    *כתב מינוי זמני למשך -------- חודשים עד ל---------
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 80px; font-size: 16px;">
+                    אנו מאחלים לך הצלחה והמשך דרך פורייה בתפקידך ובדרכך המקצועית.
+                </div>
+                
+                <div style="font-weight: bold; margin-bottom: 40px; font-size: 16px;">על המינוי חתומים :</div>
+                
+                <div style="display: flex; justify-content: space-around; font-weight: bold; text-align: center; font-size: 16px;">
+                    <div>
+                        ד"ר משיעל יוסף<br>
+                        מנהל רפואי
+                    </div>
+                    <div>
+                        מר אריה סיון<br>
+                        מנהל אדמיניסטרטיבי
+                    </div>
+                    <div>
+                        גב' מאיה שקולניק גזית<br>
+                        אחות ראשית
+                    </div>
+                </div>
+            </div>
+            
+            <div style="page-break-before: always; margin-top: 40px;">
+                <h3 style="text-decoration: underline; font-weight: bold; margin-bottom: 20px; color: #2563eb;">כתב מינוי סגן/נית אח/ות</h3>
+                <p>סגן/נית אח/ות אחראית מחלקה – אח/ות שמונה/תה ע"י הנהלת המוסד כמסייע/ת לאח/ות האחראי/ת במחלקה בבית החולים הגריאטרי וממלא/ת מקום. תחומי האחריות והסמכות של הסגן/נית יוגדרו בתיאום עם האח/ות האחראי/ת במחלקה.</p>
+                
+                <h4 style="font-weight: bold; margin-bottom: 10px; color: #2563eb;">תפקידי מנהל/ת האחיות במחלקה:</h4>
+                <ul style="list-style-type: disc; margin-right: 20px; padding-right: 20px; margin-bottom: 20px;">
+                    <li>ניהול והפעלת כוח אדם סיעודי שבאחריותה</li>
+                    <li>הבטחת איכות הטיפול הסיעודי</li>
+                    <li>אחראית לניהול הטיפול הסיעודי במטופלים והשגחה של עובדי הבריאות בתחומם.</li>
+                    <li>קשר עם גורמים חוץ מחלקתיים</li>
+                    <li>הדרכה ופיתוח צוות</li>
+                    <li>ניהול כלכלי יעיל (עלות תועלת)</li>
+                    <li>תכנון וביצוע תוכניות עבודה לטווח קצר וארוך במחלקה בתאום עם הנהלת הסיעוד</li>
+                    <li>אחראית על התפקידים שאחות ראשית ו/או אחראית מחלקה מאצילה לה.</li>
+                    <li>סגנית אחות אחראית מחליפה את האחות האחראית בהעדרה בכל התפקידים המבוקשים.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
