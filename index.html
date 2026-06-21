@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@
 </style>
 </head>
 <body>
+    <div class="sidebar-overlay"></div>
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar glass">
@@ -65,7 +66,12 @@
         <!-- Main Content -->
         <main class="main-content">
             <header class="top-header">
-                <h1>מערכת ניהול, הדרכה ובקרה ארגונית</h1>
+                <div class="header-right">
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1>מערכת ניהול, הדרכה ובקרה ארגונית</h1>
+                </div>
                 <div class="user-profile">
                     <div class="avatar">מ</div>
                     <span>מנהלת אחיות</span>

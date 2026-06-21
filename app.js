@@ -1,6 +1,34 @@
 // Initialize Lucide Icons
 lucide.createIcons();
 
+// Mobile Hamburger Menu Logic
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.querySelector('.sidebar-overlay');
+
+if (mobileBtn && sidebar && overlay) {
+    mobileBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+    });
+    
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+    });
+
+    // Close sidebar on mobile when a nav item is clicked
+    const navItemsList = sidebar.querySelectorAll('.nav-item');
+    navItemsList.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+        });
+    });
+}
+
 // Tab Navigation
 const navItems = document.querySelectorAll('.nav-item');
 const tabContents = document.querySelectorAll('.tab-content');
