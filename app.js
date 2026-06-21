@@ -757,22 +757,23 @@ window.addProjectToGallery = function(input) {
             
             let previewHtml = '';
             if(file.type.startsWith('image/')) {
-                previewHtml = <img src=" + e.target.result + " style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">;
+                previewHtml = `<img src="${e.target.result}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">`;
             } else {
-                previewHtml = <div style="height: 150px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;"><i data-lucide="file-text" style="width: 48px; height: 48px; color: #facc15; margin-bottom: 10px;"></i><span style="font-size: 0.8rem; color: #cbd5e1; text-align: center; padding: 0 10px; word-break: break-all;"> + file.name + </span></div>;
+                previewHtml = `<div style="height: 150px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;"><i data-lucide="file-text" style="width: 48px; height: 48px; color: #facc15; margin-bottom: 10px;"></i><span style="font-size: 0.8rem; color: #cbd5e1; text-align: center; padding: 0 10px; word-break: break-all;">${file.name}</span></div>`;
             }
 
             const projectName = prompt('×”×–×Ÿ ××ª ×©× ×”×¤×¨×•×™×§×˜ ×”×—×“×©:', file.name.split('.')[0]) || file.name;
             const projectOwner = prompt('×ž×™ ××—×¨××™ ×¢×œ ×”×¤×¨×•×™×§×˜?', '×¨×›×– ×¤×¨×•×™×§×˜') || '×¨×›×– ×¤×¨×•×™×§×˜';
 
-            div.innerHTML = previewHtml + 
-                <h4 style="color: #e2e8f0; margin-bottom: 5px;"> + projectName + </h4>
-                <p style="font-size:0.9rem; color: #cbd5e1; margin-bottom: 15px;">××—×¨××™:  + projectOwner + </p>
+            div.innerHTML = `
+                ${previewHtml}
+                <h4 style="color: #e2e8f0; margin-bottom: 5px;">${projectName}</h4>
+                <p style="font-size:0.9rem; color: #cbd5e1; margin-bottom: 15px;">××—×¨××™: ${projectOwner}</p>
                 <button class="btn btn-sm btn-outline" style="margin-top: auto; margin-bottom: 0;" onclick="alert('×¤×•×ª×— ××ª ×ª×¦×•×’×ª ×”×¤×¨×•×™×§×˜ ×”×ž×œ××”')">×”×¦×’ ×¤×¨×•×™×§×˜ ×ž×œ×</button>
                 <button class="btn btn-sm" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: none; position: absolute; top: 10px; left: 10px; padding: 5px; border-radius: 50%;" onclick="this.parentElement.remove()" title="×ž×—×§ ×¤×¨×•×™×§×˜">
                     <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i>
                 </button>
-            ;
+            `;
             grid.insertBefore(div, grid.firstChild);
             if(typeof lucide !== 'undefined') lucide.createIcons();
         };
@@ -780,3 +781,8 @@ window.addProjectToGallery = function(input) {
     });
     input.value = ''; // Reset input
 };
+        reader.readAsDataURL(file);
+    });
+    input.value = ''; // Reset input
+};
+
