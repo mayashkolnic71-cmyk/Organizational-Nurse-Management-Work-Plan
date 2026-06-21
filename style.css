@@ -792,3 +792,15 @@ q4 (Top-Left) points Top
         display: none !important;
     }
 }
+
+/* Modal overrides for print forms (ensure dark text on white background) */
+.modal-content p, 
+.modal-content h1, 
+.modal-content h2, 
+.modal-content h3, 
+.modal-content h4, 
+.modal-content h5, 
+.modal-content h6, 
+.modal-content li {
+    color: #000;
+}
