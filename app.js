@@ -783,3 +783,82 @@ window.addProjectToGallery = function(input) {
     });
     input.value = ''; // Reset input
 };
+
+// Meetings Logic
+const meetingTopicsByMonth = {
+    "1": [ { topic: "הצגת תוכנית עבודה מחלקתית (שנתי)", resp: "אחראית מחלקה" }, { topic: "התעמרות וחוק זכויות החולה", resp: "עו\"ס" } ],
+    "2": [ { topic: "בטיחות הטיפול", resp: "פיזיו' + רכזת תחום + אחראי בטיחות" } ],
+    "3": [ { topic: "מניעת זיהומים", resp: "נאמנת זיהומים" }, { topic: "לומדות ונהלים (בהתאם לשינויים)", resp: "אחראית מחלקה" } ],
+    "4": [ { topic: "טיפול בפצעים", resp: "אחראית מחלקה" } ],
+    "5": [ { topic: "דיון קליני: שימוש מושכל בתרופות", resp: "אחראית מחלקה" } ],
+    "6": [ { topic: "הדרכת חרום", resp: "נאמן חרום" } ],
+    "7": [ { topic: "מדדי איכות ונהלים", resp: "אחראית מחלקה" } ],
+    "8": [ { topic: "מניעת כאב (הדרכה שנתית)", resp: "רכזת תחום כאב" } ],
+    "9": [ { topic: "סדנת הזנה והאכלה", resp: "רכזת תחום הזנה והאכלה" } ],
+    "10": [ { topic: "דפוסי הפרשות", resp: "רכזת תחום שליטה על סוגרים" }, { topic: "פעולות בסיעוד", resp: "רכזת תחום הכשרות והדרכה" } ],
+    "11": [ { topic: "טיפול פליאטיבי", resp: "אחראית מחלקה" } ],
+    "12": [ { topic: "החייאה", resp: "אחראית מחלקה" }, { topic: "הדרכה לפעולות ליבה (שנתי)", resp: "אחראית מחלקה" } ]
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const monthSelect = document.getElementById('meeting-month');
+    if(monthSelect) {
+        monthSelect.addEventListener('change', (e) => {
+            const month = e.target.value;
+            populateMeetingTable(month);
+        });
+    }
+
+    const presentInput = document.getElementById('meeting-present');
+    if(presentInput) {
+        presentInput.addEventListener('input', (e) => updateCount(e.target.value, 'meeting-present-count'));
+    }
+
+    const absentInput = document.getElementById('meeting-absent');
+    if(absentInput) {
+        absentInput.addEventListener('input', (e) => updateCount(e.target.value, 'meeting-absent-count'));
+    }
+});
+
+function updateCount(text, countElementId) {
+    const count = text.split(',').map(s => s.trim()).filter(s => s.length > 0).length;
+    document.getElementById(countElementId).innerText = count;
+}
+
+function getRowHtml(topic = '', resp = '') {
+    return 
+        <tr>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="" style="width: 100%; background: transparent; border: none; color: white;"></td>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><textarea rows="2" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; padding: 5px; resize: vertical;"></textarea></td>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="" style="width: 100%; background: transparent; border: none; color: white;"></td>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                <select style="width: 100%; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); color: white; padding: 5px; border-radius: 4px;">
+                    <option value="">בחר...</option>
+                    <option value="טרם בוצע">טרם בוצע</option>
+                    <option value="בטיפול">בטיפול</option>
+                    <option value="בוצע">בוצע</option>
+                </select>
+            </td>
+        </tr>
+    ;
+}
+
+function populateMeetingTable(month) {
+    const tbody = document.getElementById('meeting-topics-table');
+    if(!tbody) return;
+    let html = getRowHtml('שוטף', 'כלל הצוות');
+    
+    if(meetingTopicsByMonth[month]) {
+        meetingTopicsByMonth[month].forEach(item => {
+            html += getRowHtml(item.topic, item.resp);
+        });
+    }
+    tbody.innerHTML = html;
+}
+
+window.addMeetingRow = function() {
+    const tbody = document.getElementById('meeting-topics-table');
+    if(tbody) {
+        tbody.insertAdjacentHTML('beforeend', getRowHtml());
+    }
+};
