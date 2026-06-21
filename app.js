@@ -35,13 +35,15 @@ const tabContents = document.querySelectorAll('.tab-content');
 
 navItems.forEach(item => {
     item.addEventListener('click', (e) => {
+        const tabId = item.getAttribute('data-tab');
+        if (!tabId) return; // Allow external links to work
+        
         e.preventDefault();
         
         navItems.forEach(nav => nav.classList.remove('active'));
         tabContents.forEach(tab => tab.classList.remove('active'));
         
         item.classList.add('active');
-        const tabId = item.getAttribute('data-tab');
         document.getElementById(tabId).classList.add('active');
         
         if(tabId === 'training-calendar' && calendar) {
