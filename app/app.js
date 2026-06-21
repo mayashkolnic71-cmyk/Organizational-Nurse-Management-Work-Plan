@@ -1,4 +1,4 @@
-﻿// Initialize Lucide Icons
+// Initialize Lucide Icons
 lucide.createIcons();
 
 // Tab Navigation
@@ -787,11 +787,11 @@ function updateCount(text, countElementId) {
 }
 
 function getRowHtml(topic = '', resp = '') {
-    return 
+    return `
         <tr>
-            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="" style="width: 100%; background: transparent; border: none; color: white;"></td>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="${topic}" style="width: 100%; background: transparent; border: none; color: white;"></td>
             <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><textarea rows="2" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; padding: 5px; resize: vertical;"></textarea></td>
-            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="" style="width: 100%; background: transparent; border: none; color: white;"></td>
+            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);"><input type="text" value="${resp}" style="width: 100%; background: transparent; border: none; color: white;"></td>
             <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);">
                 <select style="width: 100%; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); color: white; padding: 5px; border-radius: 4px;">
                     <option value="">בחר...</option>
@@ -801,7 +801,7 @@ function getRowHtml(topic = '', resp = '') {
                 </select>
             </td>
         </tr>
-    ;
+    `;
 }
 
 function populateMeetingTable(month) {
