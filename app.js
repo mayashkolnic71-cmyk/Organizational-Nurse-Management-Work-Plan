@@ -1,4 +1,4 @@
-// Initialize Lucide Icons
+﻿// Initialize Lucide Icons
 lucide.createIcons();
 
 // Tab Navigation
@@ -678,6 +678,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Chart.js Dashboard Implementation
+    Chart.defaults.color = '#e2e8f0';
+    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
     const ctxMix = document.getElementById('staffMixChart');
     if(ctxMix) {
         new Chart(ctxMix, {
