@@ -115,7 +115,7 @@ p { color: #e2e8f0; line-height: 1.5; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 15px;
 }
 
 .user-profile {

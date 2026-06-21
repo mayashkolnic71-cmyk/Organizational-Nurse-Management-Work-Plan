@@ -11,6 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
     <!-- Chart.js for Dashboard -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+.form-print-area { font-weight: 500; color: #000; }
+.form-print-area input { font-weight: 600; color: #000; }
+</style>
 </head>
 <body>
     <div class="app-container">
@@ -113,7 +118,7 @@
                         </div>
                         
                         <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="../wellbeing-model.png" alt="מודל WELL BEING" style="max-width: 100%; max-height: 500px; border-radius: 12px; margin: 0 auto; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+                            <img src="wellbeing-model.png" alt="מודל WELL BEING" style="max-width: 100%; max-height: 500px; border-radius: 12px; margin: 0 auto; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
                         </div>
                         
                         
@@ -748,6 +753,7 @@
                                         <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: #10b981; flex-shrink: 0; margin-top: 2px;"></i> <span>מערך מסע מוסדר לקליטת אחות חדשה.</span></li>
                                         <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: #10b981; flex-shrink: 0; margin-top: 2px;"></i> <span>תוכנית לפיתוח מקצועי לאחיות מוסמכות להשתלמות מוכרת לאחריות משמרת (בהתאם לחוזר מנהל האֲחָיוּת 05/04/2021).</span></li>
                                         <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: #10b981; flex-shrink: 0; margin-top: 2px;"></i> <span>תוכנית הכשרה בפיתוח מנהיגות לסגל בכיר.</span></li>
+                                        <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: #10b981; flex-shrink: 0; margin-top: 2px;"></i> <span>סדנת האכלה והזנה, החייאה, בטיחות במעברים (פעם בשנה).</span></li>
                                     </ul>
                                 </div>
 
@@ -820,7 +826,7 @@
                 <section id="appendices" class="tab-content">
                     <div class="card glass">
                         <h3>נספחים (טפסים ומסמכים)</h3>
-                        <p style="margin-bottom:20px;">מאגר טפסים ומסמכי רגולציה נדרשים לניהול הדרכות ומשמרות.</p>
+                        <p style="margin-bottom:5px;">מאגר טפסים ומסמכי רגולציה נדרשים לניהול הדרכות ומשמרות.</p>
                         
                         <div style="display: flex; flex-direction: column; gap: 15px;">
                             <!-- Clinical Instructor Form -->
@@ -930,15 +936,6 @@
         </div>
         
         <div class="table-responsive wp-print-area" style="overflow-x: visible;">
-            <div style="color: #60a5fa; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; text-align: right; line-height: 1.6;">
-                    <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום בסיום התוכנית .תוכנית עבודה תבנה לשנה /שנתיים ויותר בתיאום עם רכז/ת חת"ש.</div>
-                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו תוך אפשרות לשליפת ההדרכות /ההכשרות ועוד מלוח השנה.</div>
-                    <div>פרוטוקולים של הדרכות ודפי נוכחות יש לאפשר לצרף ללוח השנה.</div>
-
-                </div>
-                <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו תוך אפשרות לשליפת ההדרכות /ההכשרות ועוד מלוח השנה.</div>
-                <div>פרוטוקולים של הדרכות ודפי נוכחות יש לאפשר לצרף ללוח השנה.</div>
-            </div>
             <table class="wp-table" style="width: 100%; border-collapse: collapse; text-align: right;">
                 <thead>
                     <tr style="background: rgba(56,189,248,0.1);">
@@ -989,10 +986,14 @@
                 <h4 style="text-align: center; margin-top: 0; color: #cbd5e1; margin-bottom: 20px;">פעולות הטמעה ושימור שוטף</h4>
                 
                 <div style="color: #60a5fa; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; text-align: right; line-height: 1.6;">
-                    <div>הסבר מילוי ובניית תוכנית עבודה נמצא בסוף גיליון זה</div>
+                    <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום בסיום התוכנית .תוכנית עבודה תבנה לשנה /שנתיים ויותר בתיאום עם רכז/ת חת"ש.</div>
+                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו תוך אפשרות לשליפת ההדרכות /ההכשרות ועוד מלוח השנה.</div>
+                    <div>פרוטוקולים של הדרכות ודפי נוכחות יש לאפשר לצרף ללוח השנה.</div>
+
+                </div>
                     <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום</div>
-                    <div>תוכנית עבודה תבנה לשנתיים בתיאום עם רכז/ת תחום בבית הדר</div>
-                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו גם במקרה של תוכנית רב שנתית</div>
+                    <div>תוכנית עבודה תבנה לשנתיים בתיאום עם רכז/ת תחום</div>
+                    <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו גם אם במקרה של תוכנית רב שנתית</div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -1441,7 +1442,7 @@
         </button>
         
         <div class="form-print-area" style="direction: rtl; padding: 20px;">
-            <div style="text-align: left; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 20px;">נספח מס' 5<br>טופס כתב מינוי למדריך קליני</div>
+            <div style="text-align: left; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 20px;">טופס כתב מינוי למדריך קליני</div>
             
             <!-- Certificate Border -->
             <div style="border: 20px solid transparent; border-image: repeating-linear-gradient(45deg, #8b3a3a, #8b3a3a 10px, #a52a2a 10px, #a52a2a 20px) 30; padding: 40px; text-align: center; position: relative; background: #fff; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -1450,7 +1451,7 @@
                 
                 <img src="https://via.placeholder.com/150x80?text=Logo" alt="Logo" style="height: 80px; margin-bottom: 20px;">
                 
-                <h2 style="font-size: 24px; margin: 10px 0; font-family: Arial, sans-serif; font-weight: bold;">מרכז רפואה שיקום וסיעוד בית הדר</h2>
+                <h2 style="font-size: 24px; margin: 10px 0; font-family: Arial, sans-serif; font-weight: bold;">מרכז רפואה שיקום וסיעוד</h2>
                 
                 <h1 style="font-size: 42px; margin: 20px 0; font-weight: bold;">כתב מינוי למדריך קליני</h1>
                 
@@ -1521,7 +1522,7 @@
             </div>
             
             <div style="text-decoration: underline; margin-bottom: 10px;">
-                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת במרכז רפואה סיעוד ושיקום "בית הדר"<br>
+                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת במרכז רפואה סיעוד ושיקום<br>
                 ובמסגרת עבודה זו בלבד <strong>במחלקות</strong> :
             </div>
             
@@ -1635,11 +1636,11 @@
             </div>
             
             <div style="text-decoration: underline; margin-bottom: 30px;">
-                מרכז רפואה סיעוד ושיקום "בית הדר" ובמסגרת עבודה זו בלבד
+                מרכז רפואה סיעוד ושיקום ובמסגרת עבודה זו בלבד
             </div>
             
             <div style="margin-bottom: 30px;">
-                שם המוסד הרפואי והמחלקה: מרכז רפואה סיעוד ושיקום "בית הדר" <span style="text-decoration: underline;">מחלקה להנשמה ממושכת</span>
+                שם המוסד הרפואי והמחלקה: מרכז רפואה סיעוד ושיקום <span style="text-decoration: underline;">מחלקה להנשמה ממושכת</span>
             </div>
             
             <div style="margin-bottom: 20px;">
@@ -1686,14 +1687,14 @@
                     שם האחות : <input type="text" style="border:none; border-bottom:1px solid #000; width: 300px;">
                 </div>
                 <div style="margin-bottom: 50px; font-size: 16px;">
-                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד בית הדר (מרי"ג).
+                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד (מרי"ג).
                 </div>
                 
                 <div style="text-align: center; margin-bottom: 30px; font-size: 16px;">שלום רב,</div>
                 
                 <div style="text-align: center; font-weight: bold; margin-bottom: 40px; font-size: 18px;">
                     <span style="text-decoration: underline;">הנדון:</span> מינוי לתפקיד רכזת/נאמנת תחום מחלקתית <input type="text" placeholder="שם התחום" style="border:none; border-bottom:1px dashed #000; width:200px; text-align:center; font-weight:bold; font-size:18px;"><br>
-                    ב "בית הדר - מרכז רפואה שיקום וסיעוד".
+                    במרכז רפואה שיקום וסיעוד.
                 </div>
                 
                 <div style="text-align: center; margin-bottom: 40px; font-size: 16px;">
@@ -1823,7 +1824,7 @@
             </div>
             
             <div style="margin-bottom: 10px;">
-                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת <span style="text-decoration: underline;">במרכז רפואה סיעוד ושיקום "בית הדר"</span> (ראה פירוט בהמשך הדף של עיקרי תפקיד בתחום גריאטרי/טיפול תומך)
+                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת <span style="text-decoration: underline;">במרכז רפואה סיעוד ושיקום</span> (ראה פירוט בהמשך הדף של עיקרי תפקיד בתחום גריאטרי/טיפול תומך)
             </div>
             
             <div style="margin-bottom: 20px;">
@@ -1892,14 +1893,14 @@
                     שם האחות : <input type="text" style="border:none; border-bottom:1px solid #000; width: 300px;">
                 </div>
                 <div style="margin-bottom: 50px; font-size: 16px;">
-                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד בית הדר (מרי"ג).
+                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד (מרי"ג).
                 </div>
                 
                 <div style="text-align: center; margin-bottom: 30px; font-size: 16px;">שלום רב,</div>
                 
                 <div style="text-align: center; font-weight: bold; margin-bottom: 40px; font-size: 18px;">
                     <span style="text-decoration: underline;">הנדון:</span> מינוי לתפקיד סגן/נית אח/ות אחראי/ת במחלקה <input type="text" style="border:none; border-bottom:1px dashed #000; width:200px; text-align:center; font-weight:bold; font-size:18px;"><br>
-                    ב "בית הדר - מרכז רפואה שיקום וסיעוד".
+                    במרכז רפואה שיקום וסיעוד.
                 </div>
                 
                 <div style="text-align: center; margin-bottom: 40px; font-size: 16px;">

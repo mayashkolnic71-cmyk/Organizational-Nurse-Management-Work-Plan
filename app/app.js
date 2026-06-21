@@ -601,6 +601,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // הכשרות מיוחדות בטווח תאריכים
+    dynamicEvents.push({ title: 'סדנת האכלה והזנה (הכשרה שנתית)', start: '2026-05-01', end: '2026-05-02', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'סדנת החייאה (הכשרה שנתית)', start: '2026-06-01', end: '2026-06-02', classNames: ['training-event'] });
+    dynamicEvents.push({ title: 'סדנת בטיחות במעברים (הכשרה שנתית)', start: '2026-07-01', end: '2026-07-02', classNames: ['training-event'] });
     dynamicEvents.push({ title: 'הכשרה פורמלית נאמני נושא (40 שעות)', start: '2026-02-15', end: '2026-02-28', classNames: ['training-event'] });
     dynamicEvents.push({ title: 'מערך מסע מוסדר לקליטת אחות חדשה', start: '2026-08-01', end: '2026-08-14', classNames: ['training-event'] });
     dynamicEvents.push({ title: 'תוכנית הכשרה מנהיגות לסגל בכיר', start: '2026-11-01', end: '2026-11-05', classNames: ['training-event'] });
