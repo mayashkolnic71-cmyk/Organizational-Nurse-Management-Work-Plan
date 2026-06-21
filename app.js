@@ -686,15 +686,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 labels: ['אחים מעשיים', 'בוגרי על בסיסי', 'נאמני נושא', 'תואר שני'],
                 datasets: [
                     {
-                        label: 'יעד (%)',
+                        label: 'יעד ארצי (%)',
                         data: [8, 60, 50, 12],
                         backgroundColor: 'rgba(59, 130, 246, 0.5)',
                         borderColor: 'rgb(59, 130, 246)',
                         borderWidth: 1
                     },
                     {
-                        label: 'בפועל 2025 (%)',
-                        data: [12, 45.6, 36.8, 9.7],
+                        label: 'בפועל (%)',
+                        data: [0, 0, 0, 0],
                         backgroundColor: 'rgba(139, 92, 246, 0.5)',
                         borderColor: 'rgb(139, 92, 246)',
                         borderWidth: 1
@@ -712,7 +712,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: ['הושלם (40 שעות)', 'בתהליך', 'טרם התחילו'],
                 datasets: [{
-                    data: [65, 20, 15],
+                    data: [0, 0, 0],
                     backgroundColor: [
                         'rgba(16, 185, 129, 0.7)',
                         'rgba(245, 158, 11, 0.7)',
