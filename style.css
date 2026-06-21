@@ -839,3 +839,65 @@ q4 (Top-Left) points Top
     margin: 0 !important;
     z-index: 1000 !important;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        position: relative;
+        z-index: 20;
+        gap: 15px;
+    }
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    .nav-item {
+        white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    .main-content {
+        padding: 15px;
+        overflow-y: visible;
+    }
+    .top-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .top-header h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .trustees-poster-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 10px auto;
+        padding: 20px;
+    }
+    .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .wp-table th, .wp-table td {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+    .review-grid, .features-grid, .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
