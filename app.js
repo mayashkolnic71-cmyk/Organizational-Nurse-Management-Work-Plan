@@ -1,4 +1,4 @@
-// Initialize Lucide Icons
+﻿// Initialize Lucide Icons
 lucide.createIcons();
 
 // Tab Navigation
@@ -742,3 +742,41 @@ function openFormModal(modalId) {
         lucide.createIcons();
     }
 }
+
+// Add Project to Gallery
+window.addProjectToGallery = function(input) {
+    const grid = document.getElementById('projects-gallery-grid');
+    if(!grid || !input.files || input.files.length === 0) return;
+
+    Array.from(input.files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const div = document.createElement('div');
+            div.className = 'project-card';
+            div.style.cssText = 'background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); position: relative; display: flex; flex-direction: column; animation: fadeIn 0.5s ease-out;';
+            
+            let previewHtml = '';
+            if(file.type.startsWith('image/')) {
+                previewHtml = <img src=" + e.target.result + " style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">;
+            } else {
+                previewHtml = <div style="height: 150px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;"><i data-lucide="file-text" style="width: 48px; height: 48px; color: #facc15; margin-bottom: 10px;"></i><span style="font-size: 0.8rem; color: #cbd5e1; text-align: center; padding: 0 10px; word-break: break-all;"> + file.name + </span></div>;
+            }
+
+            const projectName = prompt('×”×–×Ÿ ××ª ×©× ×”×¤×¨×•×™×§×˜ ×”×—×“×©:', file.name.split('.')[0]) || file.name;
+            const projectOwner = prompt('×ž×™ ××—×¨××™ ×¢×œ ×”×¤×¨×•×™×§×˜?', '×¨×›×– ×¤×¨×•×™×§×˜') || '×¨×›×– ×¤×¨×•×™×§×˜';
+
+            div.innerHTML = previewHtml + 
+                <h4 style="color: #e2e8f0; margin-bottom: 5px;"> + projectName + </h4>
+                <p style="font-size:0.9rem; color: #cbd5e1; margin-bottom: 15px;">××—×¨××™:  + projectOwner + </p>
+                <button class="btn btn-sm btn-outline" style="margin-top: auto; margin-bottom: 0;" onclick="alert('×¤×•×ª×— ××ª ×ª×¦×•×’×ª ×”×¤×¨×•×™×§×˜ ×”×ž×œ××”')">×”×¦×’ ×¤×¨×•×™×§×˜ ×ž×œ×</button>
+                <button class="btn btn-sm" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: none; position: absolute; top: 10px; left: 10px; padding: 5px; border-radius: 50%;" onclick="this.parentElement.remove()" title="×ž×—×§ ×¤×¨×•×™×§×˜">
+                    <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i>
+                </button>
+            ;
+            grid.insertBefore(div, grid.firstChild);
+            if(typeof lucide !== 'undefined') lucide.createIcons();
+        };
+        reader.readAsDataURL(file);
+    });
+    input.value = ''; // Reset input
+};
