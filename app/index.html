@@ -894,6 +894,11 @@
         </div>
         
         <div class="table-responsive wp-print-area" style="overflow-x: visible;">
+            <div style="color: #60a5fa; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; text-align: right; line-height: 1.6;">
+                <div>יש לעדכן את התוכנית אחת לשנה ולערוך סיכום בסיום התוכנית .תוכנית עבודה תבנה לשנה /שנתיים ויותר בתיאום עם רכז/ת חת"ש.</div>
+                <div>יש לרכז את כל נתוני התוכנית על גבי תוכנית זו תוך אפשרות לשליפת ההדרכות /ההכשרות ועוד מלוח השנה.</div>
+                <div>פרוטוקולים של הדרכות ודפי נוכחות יש לאפשר לצרף ללוח השנה.</div>
+            </div>
             <table class="wp-table" style="width: 100%; border-collapse: collapse; text-align: right;">
                 <thead>
                     <tr style="background: rgba(56,189,248,0.1);">
@@ -1386,5 +1391,357 @@
             </div>
         </div>
     </div>
-</div></body>
+</div>
+<!-- Clinical Instructor Modal -->
+<div id="clinical-instructor-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: 'Times New Roman', serif, Arial;">
+        <span class="close-btn" onclick="document.getElementById('clinical-instructor-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס תעודה
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; padding: 20px;">
+            <div style="text-align: left; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 20px;">נספח מס' 5<br>טופס כתב מינוי למדריך קליני</div>
+            
+            <!-- Certificate Border -->
+            <div style="border: 20px solid transparent; border-image: repeating-linear-gradient(45deg, #8b3a3a, #8b3a3a 10px, #a52a2a 10px, #a52a2a 20px) 30; padding: 40px; text-align: center; position: relative; background: #fff; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                
+                <div style="border: 2px solid #8b3a3a; position: absolute; top: 10px; bottom: 10px; left: 10px; right: 10px; pointer-events: none;"></div>
+                
+                <img src="https://via.placeholder.com/150x80?text=Logo" alt="Logo" style="height: 80px; margin-bottom: 20px;">
+                
+                <h2 style="font-size: 24px; margin: 10px 0; font-family: Arial, sans-serif; font-weight: bold;">מרכז רפואה שיקום וסיעוד בית הדר</h2>
+                
+                <h1 style="font-size: 42px; margin: 20px 0; font-weight: bold;">כתב מינוי למדריך קליני</h1>
+                
+                <div style="font-size: 20px; margin: 20px 0; font-family: Arial, sans-serif;">
+                    גב' <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px; font-size:20px; text-align:center; font-family: Arial, sans-serif;"> ת.ז. <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px; font-size:20px; text-align:center; font-family: Arial, sans-serif;">
+                </div>
+                
+                <div style="font-size: 18px; margin: 20px 0; font-weight: bold; font-family: Arial, sans-serif;">
+                    מאשרים בזה שמדריך בעל ניסיון קליני יותר משנה בתחום הרלוונטי
+                </div>
+                
+                <div style="font-size: 24px; margin: 15px 0; font-weight: bold; font-family: Arial, sans-serif;">
+                    <input type="text" value="ינואר 2018" style="border:none; text-align:center; font-size:24px; font-weight:bold; width: 200px; font-family: Arial, sans-serif;">
+                </div>
+                
+                <div style="font-size: 18px; margin: 10px 0; font-weight: bold; font-family: Arial, sans-serif;">
+                    מינוי בתוקף עד <input type="text" value="31.12.2020" style="border:none; border-bottom:1px dashed #000; font-size:18px; font-weight:bold; width: 120px; text-align:center; font-family: Arial, sans-serif;">
+                </div>
+                
+                <div style="margin-top: 50px; font-size: 16px; font-weight: bold; font-family: Arial, sans-serif;">
+                    מנהלת שרותי סיעוד<br>
+                    גב' מאיה שקולניק-גזית<br>
+                    RN MHA
+                </div>
+                
+                <!-- Decorative Elements Placeholders -->
+                <div style="position: absolute; bottom: 40px; right: 40px; color: #1e3a8a;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div style="position: absolute; bottom: 30px; left: 40px; color: #ef4444;">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Exceptional Operations RN Modal -->
+<div id="auth-rn-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('auth-rn-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס טופס
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; font-size: 14px; line-height: 1.6;">
+            <div style="text-align: left; font-weight: bold; margin-bottom: 20px;">נספח מס' 3</div>
+            
+            <h2 style="text-align: center; font-size: 18px; font-weight: bold; text-decoration: underline; margin-bottom: 20px;">טופס הרשאה אישית לביצוע פעולות חריגות לאחות מוסמכת</h2>
+            
+            <div style="font-weight: bold; margin-bottom: 20px;">חוזר מנכ"ל 13/2001 ; חוזר מנהל הסיעוד 43/2001</div>
+            
+            <p>בתוקף סמכותי לפי תקנות הרופאים (כשירויות לביצוע פעולות חריגות), התשס"א - 2001 ולפי<br>
+            היתר מאת המנהל הכללי של משרד הבריאות לאצול סמכויות לביצוע פעולות חריגות, אני מרשה</p>
+            
+            <div style="margin-bottom: 10px; display: flex; align-items: center;">
+                <span style="width: 80px;">למר/גב'</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+                <span style="width: 40px; text-align: center;">ת.ז.</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="text-align: center; font-size: 12px; margin-bottom: 20px;">(שם מבצע הפעולות החריגות)</div>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="font-weight: bold; text-decoration: underline;">אחות מוסמכת</span> / אחות מעשית / לעוזר* מס' רישום : <input type="text" style="width: 150px; border:none; border-bottom:1px solid #000;"> <span style="font-weight: bold;">בעלת השתלמות מוכרת ב : </span> <input type="text" style="width: 200px; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="text-decoration: underline; margin-bottom: 10px;">
+                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת במרכז רפואה סיעוד ושיקום "בית הדר"<br>
+                ובמסגרת עבודה זו בלבד <strong>במחלקות</strong> :
+            </div>
+            
+            <table style="width: 300px; border-collapse: collapse; margin-bottom: 30px; border: 1px solid #000; margin-right: auto; margin-left: auto;">
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 5px; width: 30%; text-align: center;"><input type="checkbox"></td>
+                        <td style="border: 1px solid #000; padding: 5px; width: 70%;">מונשמים</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 5px; text-align: center;"><input type="checkbox"></td>
+                        <td style="border: 1px solid #000; padding: 5px;">שיקום</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 5px; text-align: center;"><input type="checkbox"></td>
+                        <td style="border: 1px solid #000; padding: 5px;">סיעוד מורכב</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 5px; text-align: center;"><input type="checkbox"></td>
+                        <td style="border: 1px solid #000; padding: 5px;">סיעודית</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 5px; text-align: center;"><input type="checkbox"></td>
+                        <td style="border: 1px solid #000; padding: 5px;">תשושי נפש</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px; border: 1px solid #000;">
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px; width: 70%;">שאיבה עמוקה מקנה הנשימה ( Deep Suction )</td>
+                        <td style="border: 1px solid #000; padding: 10px; width: 30%; text-align: center;"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px;">התאמת מכשיר הנשמה לצורך גמילה ממונשם</td>
+                        <td style="border: 1px solid #000; padding: 10px; text-align: center;"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px;">&nbsp;</td>
+                        <td style="border: 1px solid #000; padding: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px;">&nbsp;</td>
+                        <td style="border: 1px solid #000; padding: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 10px;">&nbsp;</td>
+                        <td style="border: 1px solid #000; padding: 10px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-bottom: 20px;">
+                שם וחתימה של מנהל המחלקה/מרפאה: מס' רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 20px; clear: both;">
+                שם וחתימה של מנהל הרפואי: מס' רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 40px; clear: both;">
+                שם חתימה של המנהלת סיעוד: מספר רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            
+            <div style="clear: both; margin-top: 50px;">
+                העתק: תיק אישי, העתק לעובד<br>
+                מנהל בית החולים - לגבי עוזרים בבית חולים<br>
+                מנהלת הסיעוד בבית החולים - לגבי אחיות
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Exceptional Operations PN Modal -->
+<div id="auth-pn-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('auth-pn-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס טופס
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; font-size: 14px; line-height: 1.6;">
+            <div style="text-align: left; font-weight: bold; margin-bottom: 20px;">נספח מס' 4</div>
+            
+            <h2 style="text-align: center; font-size: 18px; font-weight: bold; text-decoration: underline; margin-bottom: 20px;">טופס הרשאה אישית לביצוע פעולה חריגה לאחות מעשית</h2>
+            
+            <div style="font-weight: bold; margin-bottom: 5px; text-decoration: underline;">שם של פעולה חריגה: חיבור וניתוק חולה מונשם לצורך שאיבת הפרשות</div>
+            <div style="font-weight: bold; margin-bottom: 20px;">מנכ"ל 13/2001 ; מינהל הסיעוד 43/2001</div>
+            
+            <p>בתוקף סמכותי לפי תקנות הרופאים (כשירויות לביצוע פעולות חריגות), התשס"א - 2001 ולפי<br>
+            היתר מאת המנהל הכללי של משרד הבריאות לאצול סמכויות לביצוע פעולות חריגות, אני מרשה</p>
+            
+            <div style="margin-bottom: 10px; display: flex; align-items: center;">
+                <span style="width: 80px;">למר/גב'</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+                <span style="width: 40px; text-align: center;">ת.ז.</span>
+                <input type="text" style="flex:1; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="text-align: center; font-size: 12px; margin-bottom: 20px;">(שם מבצע הפעולות החריגות)</div>
+            
+            <div style="margin-bottom: 20px;">
+                אחות מוסמכת / <span style="font-weight: bold; text-decoration: underline;">אחות מעשית</span> / לעוזר* 
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                מס' רישיון/רישום/תעודה/ הכרת מעמד: <input type="text" style="width: 200px; border:none; border-bottom:1px solid #000;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                לבצע את הפעולות המנויות להלן וזאת כל זמן שהוא/היא עובד/ת בבית חולים/קופת חולים*
+            </div>
+            
+            <div style="text-decoration: underline; margin-bottom: 30px;">
+                מרכז רפואה סיעוד ושיקום "בית הדר" ובמסגרת עבודה זו בלבד
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                שם המוסד הרפואי והמחלקה: מרכז רפואה סיעוד ושיקום "בית הדר" <span style="text-decoration: underline;">מחלקה להנשמה ממושכת</span>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                שם וחתימה של מנהל המחלקה/מרפאה: מס' רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 20px; clear: both;">
+                שם וחתימה של מנהל הרפואי: מס' רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            <div style="margin-bottom: 40px; clear: both;">
+                שם חתימה של המנהלת סיעוד: מספר רישיון: <input type="text" style="width: 250px; border:none; border-bottom:1px solid #000; float: left;">
+            </div>
+            
+            <div style="clear: both; margin-top: 50px;">
+                העתק: תיק אישי, העתק לעובד<br>
+                מנהל בית החולים - לגבי עוזרים בבית חולים<br>
+                מנהלת הסיעוד בבית החולים - לגבי אחיות
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topic Trustee Modal -->
+<div id="topic-trustee-modal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 900px; color: #000; font-family: Arial, sans-serif;">
+        <span class="close-btn" onclick="document.getElementById('topic-trustee-modal').style.display='none'; document.body.classList.remove('has-modal');" style="color: #666; float: left; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <button onclick="window.print()" class="btn btn-primary print-btn" style="float: left; margin-left: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="printer" style="width: 18px; height: 18px;"></i> הדפס טופס
+        </button>
+        
+        <div class="form-print-area" style="direction: rtl; font-size: 15px; line-height: 1.6;">
+            <!-- Page 1 -->
+            <div style="page-break-after: always; min-height: 1000px; position: relative;">
+                <div style="text-align: left; font-weight: bold; margin-bottom: 20px; font-size: 16px;">נספח מס' 6 כתב מינוי לתפקיד רכז/נאמן תחום</div>
+                
+                <div style="margin-bottom: 40px;">
+                    <img src="https://via.placeholder.com/150x80?text=Logo" alt="Logo" style="height: 80px;">
+                </div>
+                
+                <div style="text-align: left; font-weight: bold; margin-bottom: 50px;">
+                    תאריך המינוי : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px; font-size: 16px;">
+                </div>
+                
+                <div style="font-weight: bold; text-decoration: underline; margin-bottom: 20px; font-size: 18px;">לכבוד:</div>
+                <div style="margin-bottom: 10px; font-size: 16px;">
+                    שם האחות : <input type="text" style="border:none; border-bottom:1px solid #000; width: 300px;">
+                </div>
+                <div style="margin-bottom: 50px; font-size: 16px;">
+                    מחלקה : <input type="text" style="border:none; border-bottom:1px solid #000; width: 200px;"> במרכז רפואה שיקום וסיעוד בית הדר (מרי"ג).
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 30px; font-size: 16px;">שלום רב,</div>
+                
+                <div style="text-align: center; font-weight: bold; margin-bottom: 40px; font-size: 18px;">
+                    <span style="text-decoration: underline;">הנדון:</span> מינוי לתפקיד רכזת/נאמנת תחום מחלקתית <input type="text" placeholder="שם התחום" style="border:none; border-bottom:1px dashed #000; width:200px; text-align:center; font-weight:bold; font-size:18px;"><br>
+                    ב "בית הדר - מרכז רפואה שיקום וסיעוד".
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 40px; font-size: 16px;">
+                    בזה אנו ממנים אותך לתפקיד רכזת תחום <input type="text" placeholder="שם התחום" style="border:none; border-bottom:1px dashed #000; width:150px; text-align:center;"> מתאריך <input type="text" style="border:none; border-bottom:1px dashed #000; width:150px; text-align:center;"><br>
+                    וזאת בהתאם לדרישות התפקיד והמטלות הנדרשות .
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 80px; font-size: 16px;">
+                    אנו מאחלים לך הצלחה והמשך דרך פורייה בתפקידך ובדרכך המקצועית.
+                </div>
+                
+                <div style="font-weight: bold; margin-bottom: 40px; font-size: 16px;">על המינוי חתומים :</div>
+                
+                <div style="display: flex; justify-content: space-around; font-weight: bold; text-align: center; font-size: 16px;">
+                    <div>
+                        ד"ר משיעל יוסף<br>
+                        מנהל רפואי
+                    </div>
+                    <div>
+                        גב' מאיה שקולניק גזית<br>
+                        אחות ראשית
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 2 -->
+            <div style="padding-top: 40px;">
+                <h3 style="text-align: center; text-decoration: underline; font-weight: bold; margin-bottom: 30px;">נספח מס' 6 - המשך כתב מינוי לתפקיד רכז/נאמן תחום</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <div style="font-weight: bold; color: #2563eb; margin-bottom: 10px;">1. <span style="text-decoration: underline;">דרישות התפקיד לנאמנת נושא מחלקתית -</span></div>
+                    <ul style="list-style-type: disc; margin-right: 20px; padding-right: 20px;">
+                        <li>אחות מוסמכת בעלת רישיון לעסוק בסיעוד</li>
+                        <li>בעלת הכשרה פורמלית בתחום עליו היא ממונה</li>
+                        <li>עובדת בבית החולים הגריאטרי מעל ל-6 חודשים</li>
+                        <li>עובדת בבית החולים הגריאטרי משרה מלאה</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <div style="font-weight: bold; color: #2563eb; margin-bottom: 10px;">2. <span style="text-decoration: underline;">תיאור עיקרי תפקיד ואחריות אחות רכזת / נאמנת נושא מחלקתית</span></div>
+                    
+                    <div style="margin-right: 20px; margin-bottom: 15px;">
+                        <div style="font-weight: bold; color: #2563eb; margin-bottom: 10px;">2.1 <span style="text-decoration: underline;">אחריות :</span></div>
+                        <ul style="list-style-type: disc; margin-right: 20px; padding-right: 20px;">
+                            <li>אחראית להדרכת הצוות ולקידום איכות ומצוינות הטיפול הסיעודי בתחום עליו היא ממונה</li>
+                            <li>אחראית לתכנון והטמעת תוכנית עבודה שנתית , בהתאם לאיסוף נתונים וניתוחם תדאג להדרכה ויישום בהתאם.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-right: 20px;">
+                        <div style="font-weight: bold; color: #2563eb; margin-bottom: 10px;">2.2 <span style="text-decoration: underline;">עיקרי תפקיד :</span></div>
+                        <div style="font-weight: bold; margin-bottom: 15px;">
+                            <span style="text-decoration: underline;">מכינה תכנית עבודה שנתית</span>, לאיסוף נתונים וניתוחם לקידום איכות ומצוינות הטיפול בתחום המוביל, בהתאם לאסטרטגיית משרד הבריאות ומנהל האחיות "מימוש הזכות לבריאות לכלל אוכלוסיית ישראל הכוללת :
+                        </div>
+                        
+                        <ol style="margin-right: 20px; padding-right: 20px; line-height: 1.8;">
+                            <li>מעלה <span style="text-decoration: underline;">מודעות לחשיבות</span> התחום ולטיפול רב תחומי במטופל ......</li>
+                            <li>מדריכה <span style="text-decoration: underline;">צוות</span> לקידום איכות הטיפול בתחום עליו היא ממונה.</li>
+                            <li>מפתחת , מקדמת <span style="text-decoration: underline;">הדרכות למטופל</span> ומשפחתו</li>
+                            <li><span style="text-decoration: underline;">מתן יעוץ, כלים והדרכה</span> לצוות לשימוש מותאם לצרכי המטופל תוך שיתוף מטופל ו/או בני משפחה</li>
+                            <li>קיום <span style="text-decoration: underline;">קשר רציף בין נאמן מחלקתי לרכזת</span> הנושא בביה"ח</li>
+                            <li>מהווה <span style="text-decoration: underline;">משאב ידע</span> עבור הצוות , המטופל ומשפחתו</li>
+                            <li>מיידעת את הצוות על <span style="text-decoration: underline;">חידושים</span> ומנהלת מעקב אחר הכשרה פורמלית</li>
+                            <li>מקדמת <span style="text-decoration: underline;">תוכניות מחלקתיות</span> המבוססות על נהלי עבודה</li>
+                            <li><span style="text-decoration: underline;">הכרה, שותפות, בניה , עדכון והטמעת</span> נהלים בהתאם לחוזרים של משרד הבריאות .</li>
+                            <li><span style="text-decoration: underline;">יוזמת הרצאות</span> בישיבות צוות מחלקתיות</li>
+                            <li><span style="text-decoration: underline;">משתתפת במחקרים</span> בתחום הקליני הספציפי</li>
+                            <li><span style="text-decoration: underline;">לקדם סטנדרטיזציה</span> של רשומה רפואית שתאפשר איסוף ותיעוד של מידע קליני</li>
+                            <li><span style="text-decoration: underline;">איסוף נתונים/בקרה ופיקוח</span></li>
+                            <li><span style="text-decoration: underline;">שיקוף ומשוב</span> ממצאי ביצוע תוכנית עבודה שנתית לצוותים ולהנהלה</li>
+                            <li><span style="text-decoration: underline;">להוביל את התוכנית למדדי איכות</span> קליניים ארציים ומוסדיים.</li>
+                            <li><span style="text-decoration: underline;">להיות שותף בהגדרת מדדי איכות</span> למוסד והטמעת אלגוריתם למדידה.</li>
+                            <li><span style="text-decoration: underline;">לנטר</span> שיעור עמידה בכל מדד, לנסח המלצות ולקבוע <span style="text-decoration: underline;">מדיניות</span> בנושאים הנמדדים.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px; margin-bottom: 30px;">
+                    חתימת מקבל/ת המינוי : <input type="text" style="border:none; border-bottom:1px solid #000; width: 300px;">
+                </div>
+                
+                <div style="font-weight: bold; margin-top: 40px; font-size: 14px;">
+                    סימוכין: מכרז כללי לרכישת שירותי אשפוז גריאטריים 2016.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
