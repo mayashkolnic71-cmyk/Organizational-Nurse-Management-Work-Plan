@@ -46,14 +46,18 @@ navItems.forEach(item => {
         item.classList.add('active');
         document.getElementById(tabId).classList.add('active');
         
-        // Show/hide floating back button
+        // Update floating back button
         const backBtn = document.getElementById('floating-back-btn');
         if (backBtn) {
+            backBtn.style.display = 'flex';
             if (tabId === 'dashboard') {
-                backBtn.style.display = 'none';
+                backBtn.innerHTML = '<i data-lucide="home" style="width: 20px; height: 20px;"></i> חזרה לפורטל איכות ובטיחות';
+                backBtn.onclick = function() { window.location.href = '../index.html'; };
             } else {
-                backBtn.style.display = 'flex';
+                backBtn.innerHTML = '<i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i> חזרה למסך הראשי';
+                backBtn.onclick = window.goToDashboard;
             }
+            if (window.lucide) lucide.createIcons();
         }
         
         if(tabId === 'training-calendar' && calendar) {
